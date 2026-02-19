@@ -23,6 +23,8 @@ services:
       - "80:80"
     env_file:
       - .env
+    environment:
+      API_UPSTREAM: http://backend:3000
     networks:
       - observability
     restart: always

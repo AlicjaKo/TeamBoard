@@ -8,28 +8,9 @@ networks:
 
 volumes:
   db-data:
-  lgtm-data:
 
 services:
-  lgtm:
-    image: grafana/otel-lgtm:latest
-    container_name: lgtm
-    ports:
-      - "3030:3000"
-    environment:
-      GF_SECURITY_ADMIN_USER: admin
-      GF_SECURITY_ADMIN_PASSWORD: admin
-    volumes:
-      - lgtm-data:/var/lib/grafana
-    restart: unless-stopped
-    networks:
-      - observability
-    healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:3030/api/health"]
-      interval: 30s
-      timeout: 10s
-      retries: 5
-
+  
   db:
     image: postgres:15-alpine
     restart: unless-stopped
@@ -64,8 +45,6 @@ services:
     depends_on:
       db:
         condition: service_healthy   # ← wait for DB
-      lgtm:
-        condition: service_started
     networks:
       - app-network
       - observability
@@ -84,6 +63,7 @@ services:
       - ./frontend/.env
     environment:
       NODE_ENV: production
+      API_UPSTREAM: http://backend:3000
     restart: unless-stopped
     depends_on:
       - backend
