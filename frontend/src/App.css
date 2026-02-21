@@ -814,9 +814,9 @@ body::before {
 .day-cell,
 .empty-cell {
 	width: 14.28%;
-	height: 110px; /* slightly smaller to make calendar more compact */
+	height: 0;
+	padding-bottom: 14.28%; /* square aspect ratio */
 	vertical-align: top;
-	padding: 8px;
 	background: rgba(2, 20, 46, 0.02);
 	border-radius: 10px;
 	border: 1px solid rgba(255, 255, 255, 0.04);
@@ -857,6 +857,39 @@ body::before {
 	border-color: rgba(100, 108, 255, 0.12);
 	background: rgba(100, 108, 255, 0.02);
 }
+
+.day-cell.has-tasks {
+	background: rgba(96, 165, 250, 0.08);
+	border-color: rgba(96, 165, 250, 0.28);
+}
+
+.day-task-count {
+	position: absolute;
+	right: 6px;
+	top: 6px;
+	min-width: 22px;
+	height: 22px;
+	padding: 0 6px;
+	border-radius: 9999px;
+	background: rgba(96, 165, 250, 0.95);
+	color: #04233a;
+	font-size: 0.75rem;
+	font-weight: 700;
+	line-height: 22px;
+	text-align: center;
+	box-sizing: border-box;
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	z-index: 2;
+}
+
+:not(.theme-light) .day-task-count {
+	color: #000000;
+}
+
+.theme-light .day-cell.has-tasks {
+	background: rgba(47, 140, 254, 0.12);
+	border-color: rgba(47, 140, 254, 0.32);
+}
 .day-btn.selected {
 	background: linear-gradient(90deg, var(--accent), var(--accent-strong));
 	color: #04233a;
@@ -869,15 +902,22 @@ body::before {
 	color: #ffffff;
 }
 
+.theme-light .day-btn {
+	color: #000000;
+}
+
 /* Light-theme selected day border */
 .theme-light .day-btn.selected {
 	border: 1px solid rgba(7, 20, 34, 0.08);
 	box-shadow: none;
 }
 .cell-tasks {
-	margin-top: 44px; /* ensure tasks render beneath the small day button */
-	display: block; /* use block layout to ensure scrolling inside table cells */
-	max-height: 56px; /* fixed visible area before scrolling */
+	position: absolute;
+	top: 44px;
+	left: 8px;
+	right: 8px;
+	bottom: 8px;
+	display: block;
 	overflow-y: auto;
 	overflow-x: hidden;
 	-webkit-overflow-scrolling: touch;
@@ -995,6 +1035,65 @@ body::before {
 	}
 	.calendar-right {
 		order: 2;
+	}
+}
+
+@media (max-width: 720px) {
+	.calendar-table {
+		table-layout: fixed;
+		border-spacing: 4px;
+	}
+
+	.day-cell,
+	.empty-cell {
+		padding-bottom: 14.28%;
+		height: 0;
+	}
+
+	.calendar-table th {
+		padding: 6px 2px;
+		font-size: 0.82rem;
+	}
+
+	.day-btn {
+		width: 28px;
+		height: 28px;
+		left: 4px;
+		top: 4px;
+		font-size: 0.82rem;
+		border-radius: 6px;
+	}
+
+	.day-task-count {
+		right: 3px;
+		top: auto;
+		bottom: 3px;
+		min-width: 18px;
+		height: 18px;
+		padding: 0 5px;
+		line-height: 18px;
+		font-size: 0.68rem;
+	}
+
+	.cell-tasks {
+		display: none;
+	}
+
+	.day-box {
+		padding: 12px;
+	}
+
+	.calendar-page .task-card {
+		width: 100%;
+		min-width: 0;
+		max-width: 100%;
+		min-height: 0;
+		max-height: none;
+		padding: 10px;
+	}
+
+	.calendar-page .task-controls {
+		flex-wrap: wrap;
 	}
 }
 

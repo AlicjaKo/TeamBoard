@@ -190,10 +190,15 @@ export default function CalendarView({ onAddTaskForDate }) {
 										? formatKey(display.year, display.month, d)
 										: null;
 									const cellTasks = key ? tasksByDate.get(key) || [] : [];
+									const hasTasks = cellTasks.length > 0;
 									return (
 										<td
 											key={`${display.year}-${display.month}-${wi}-${i}`}
-											className={isDay ? "day-cell" : "empty-cell"}
+											className={
+												isDay
+													? `day-cell${hasTasks ? " has-tasks" : ""}`
+													: "empty-cell"
+											}
 											onClick={isDay ? () => onSelectDay(d) : undefined}
 											role={isDay ? "button" : undefined}
 											tabIndex={isDay ? 0 : undefined}
@@ -222,6 +227,14 @@ export default function CalendarView({ onAddTaskForDate }) {
 													>
 														{d}
 													</button>
+													{hasTasks && (
+														<span
+															className="day-task-count"
+															title={`${cellTasks.length} task${cellTasks.length === 1 ? "" : "s"}`}
+														>
+															{cellTasks.length > 99 ? "99+" : cellTasks.length}
+														</span>
+													)}
 													<div className="cell-tasks">
 														{cellTasks.slice(0, 3).map((t) => (
 															<div
