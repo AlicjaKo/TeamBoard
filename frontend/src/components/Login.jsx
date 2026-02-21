@@ -7,7 +7,7 @@ export default function Login({
 	onToggleNightMode,
 	nightMode,
 }) {
-	const [username, setUsername] = useState("");
+	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [error, setError] = useState("");
 
@@ -27,7 +27,7 @@ export default function Login({
 			const res = await fetch(`${base}/api/auth/login`, {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
-				body: JSON.stringify({ username, password }),
+				body: JSON.stringify({ username: email.trim(), password }),
 			});
 
 			let data;
@@ -90,9 +90,10 @@ export default function Login({
 					{error && <p className="auth-error">{error}</p>}
 					<form onSubmit={handleLogin}>
 						<input
-							placeholder="Username"
-							value={username}
-							onChange={(e) => setUsername(e.target.value)}
+							type="email"
+							placeholder="Email"
+							value={email}
+							onChange={(e) => setEmail(e.target.value)}
 							className="input"
 						/>
 						<input

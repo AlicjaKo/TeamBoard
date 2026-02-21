@@ -40,6 +40,12 @@ function App() {
     }
   });
   const [showAddForm, setShowAddForm] = useState(false);
+  const [taskDefaults, setTaskDefaults] = useState({});
+
+  const openAddTaskForm = (defaults = {}) => {
+    setTaskDefaults(defaults);
+    setShowAddForm(true);
+  };
 
   // lock body scroll while overlay is open
   useEffect(() => {
@@ -130,6 +136,7 @@ function App() {
         teamName={teamName}
         teamId={teamId}
         onNavigate={navigate}
+        onAddTask={() => openAddTaskForm()}
       />
       {/* show New Task form overlay */}
       {showAddForm && (
@@ -147,11 +154,17 @@ function App() {
             <h3 className="modal-title">Add Task</h3>
             <TaskForm
               teamId={teamId}
+              initialPriority={taskDefaults.priority}
+              initialDueDate={taskDefaults.dueDate}
               onCreated={() => {
                 setRefreshKey((k) => k + 1);
                 setShowAddForm(false);
+                setTaskDefaults({});
               }}
-              onClose={() => setShowAddForm(false)}
+              onClose={() => {
+                setShowAddForm(false);
+                setTaskDefaults({});
+              }}
             />
           </div>
         </div>
@@ -185,7 +198,13 @@ function App() {
           )}
         </header>
         <div key={refreshKey}>
-          {page === "tasks" && <TaskList teamId={teamId} token={token} />}
+          {page === "tasks" && (
+            <TaskList
+              teamId={teamId}
+              token={token}
+              onAddTask={(defaults) => openAddTaskForm(defaults)}
+            />
+          )}
           {page === "team-settings" && (
             <TeamSettings
               teamId={teamId}
@@ -194,7 +213,11 @@ function App() {
               onNavigate={navigate}
             />
           )}
-          {page === "calendar" && <CalendarView />}
+          {page === "calendar" && (
+            <CalendarView
+              onAddTaskForDate={(dueDate) => openAddTaskForm({ dueDate })}
+            />
+          )}
           {page === "user-settings" && (
             <UserSettings onNavigate={(p) => setPage(p)} />
           )}
@@ -204,7 +227,7 @@ function App() {
           <button
             type="button"
             className="floating-add"
-            onClick={() => setShowAddForm(true)}
+            onClick={() => openAddTaskForm()}
             aria-label="Add task"
             title="New task"
           >

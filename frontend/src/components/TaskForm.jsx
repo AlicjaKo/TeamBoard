@@ -2,12 +2,18 @@ import { useEffect, useId, useState } from "react";
 import { createTask } from "../api/tasks";
 import { createTeamTask, fetchTeamMembers } from "../api/teams";
 
-export default function TaskForm({ onCreated, onClose, teamId }) {
+export default function TaskForm({
+  onCreated,
+  onClose,
+  teamId,
+  initialPriority = "medium",
+  initialDueDate = "",
+}) {
   const id = useId();
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [dueDate, setDueDate] = useState("");
-  const [priority, setPriority] = useState("medium");
+  const [dueDate, setDueDate] = useState(initialDueDate || "");
+  const [priority, setPriority] = useState(initialPriority || "medium");
   const [loading, setLoading] = useState(false);
 
   const [availableUsers, setAvailableUsers] = useState([]);
@@ -38,6 +44,14 @@ export default function TaskForm({ onCreated, onClose, teamId }) {
     };
   }, [teamId]);
 
+  useEffect(() => {
+    setDueDate(initialDueDate || "");
+  }, [initialDueDate]);
+
+  useEffect(() => {
+    setPriority(initialPriority || "medium");
+  }, [initialPriority]);
+
   const submit = async (e) => {
     e.preventDefault();
     if (!title.trim()) return alert("Title required");
@@ -67,8 +81,8 @@ export default function TaskForm({ onCreated, onClose, teamId }) {
       }
       setTitle("");
       setDescription("");
-      setDueDate("");
-      setPriority("medium");
+      setDueDate(initialDueDate || "");
+      setPriority(initialPriority || "medium");
       if (onCreated) onCreated(newTask);
     } catch (e) {
       console.error(e);

@@ -11,7 +11,7 @@ import {
 } from "../api/teams";
 import TaskItem from "./TaskItem";
 
-export default function TaskList({ teamId, token }) {
+export default function TaskList({ teamId, token, onAddTask }) {
   const [tasks, setTasks] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -112,7 +112,18 @@ export default function TaskList({ teamId, token }) {
   return (
     <div className="tasks-columns">
       <div className="task-column column-high">
-        <h3 className="column-title">High</h3>
+        <div className="column-title-row">
+          <h3 className="column-title">High</h3>
+          <button
+            type="button"
+            className="btn btn-ghost"
+            onClick={() => onAddTask?.({ priority: "high" })}
+            aria-label="Add high priority task"
+            title="Add high priority task"
+          >
+            +
+          </button>
+        </div>
         <div className="column-body">
           {groups.high.length === 0 && (
             <div className="empty-column">No high priority tasks</div>
@@ -130,7 +141,18 @@ export default function TaskList({ teamId, token }) {
       </div>
 
       <div className="task-column column-medium">
-        <h3 className="column-title">Medium</h3>
+        <div className="column-title-row">
+          <h3 className="column-title">Medium</h3>
+          <button
+            type="button"
+            className="btn btn-ghost"
+            onClick={() => onAddTask?.({ priority: "medium" })}
+            aria-label="Add medium priority task"
+            title="Add medium priority task"
+          >
+            +
+          </button>
+        </div>
         <div className="column-body">
           {groups.medium.length === 0 && (
             <div className="empty-column">No medium priority tasks</div>
@@ -148,7 +170,18 @@ export default function TaskList({ teamId, token }) {
       </div>
 
       <div className="task-column column-low">
-        <h3 className="column-title">Low</h3>
+        <div className="column-title-row">
+          <h3 className="column-title">Low</h3>
+          <button
+            type="button"
+            className="btn btn-ghost"
+            onClick={() => onAddTask?.({ priority: "low" })}
+            aria-label="Add low priority task"
+            title="Add low priority task"
+          >
+            +
+          </button>
+        </div>
         <div className="column-body">
           {groups.low.length === 0 && (
             <div className="empty-column">No low priority tasks</div>
