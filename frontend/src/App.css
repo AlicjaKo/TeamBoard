@@ -1,29 +1,29 @@
 :root {
-  /* deeper, more saturated blue background for dark mode */
-  --bg: linear-gradient(
-    180deg,
-    #000a1a 0%,
-    #00324a 40%,
-    #00526a 75%,
-    #00607a 100%
-  );
-  /* slightly bluer surface so columns/cards contrast with the page gradient */
-  --surface: #071829;
-  --muted-surface: #03121a;
-  /* darker column surface for priority columns in dark mode */
-  --column-surface: #121f2e;
-  --text: #e6eef8;
-  --muted-text: #9aa6b2;
-  --accent: #60a5fa;
-  --accent-strong: #7cdbff;
-  --accent-active: #0073ff;
-  --accent-strong-active: #00bbff;
-  --danger: #ff6b6b;
-  --radius: 12px;
-  /* softer navy-blue elevation shadow */
-  --elevation: 0 8px 22px rgba(2, 20, 46, 0.35);
-  --gap: 16px;
-  --max-width: 980px;
+	/* deeper, more saturated blue background for dark mode */
+	--bg: linear-gradient(
+		180deg,
+		#000a1a 0%,
+		#00324a 40%,
+		#00526a 75%,
+		#00607a 100%
+	);
+	/* slightly bluer surface so columns/cards contrast with the page gradient */
+	--surface: #071829;
+	--muted-surface: #03121a;
+	/* darker column surface for priority columns in dark mode */
+	--column-surface: #121f2e;
+	--text: #e6eef8;
+	--muted-text: #9aa6b2;
+	--accent: #60a5fa;
+	--accent-strong: #7cdbff;
+	--accent-active: #0073ff;
+	--accent-strong-active: #00bbff;
+	--danger: #ff6b6b;
+	--radius: 12px;
+	/* softer navy-blue elevation shadow */
+	--elevation: 0 8px 22px rgba(2, 20, 46, 0.35);
+	--gap: 16px;
+	--max-width: 980px;
 }
 
 /* --- Enforcement: ensure hover/focus behavior for sidebar and action buttons --- */
@@ -38,7 +38,7 @@
 :not(.theme-light) .sidebar .nav-expand-btn:hover,
 :not(.theme-light) .sidebar .logout-btn:hover,
 :not(.theme-light) .sidebar .person-btn:hover {
-  border-color: #646cff;
+	border-color: #646cff;
 }
 
 /* Add a visible focus ring for keyboard users */
@@ -46,101 +46,101 @@
 .sidebar .nav-expand-btn:focus-visible,
 .sidebar .logout-btn:focus-visible,
 .sidebar .person-btn:focus-visible {
-  outline: 3px solid rgba(96, 165, 250, 0.18);
-  outline-offset: 2px;
+	outline: 3px solid rgba(96, 165, 250, 0.18);
+	outline-offset: 2px;
 }
 
 /* Settings: ensure Add-user button shows blue border on hover in light theme */
 /* Use higher specificity; add !important to ensure it isn't overridden by other theme helpers */
 .theme-light .add-user-actions .btn:hover {
-  border-color: #646cff !important;
+	border-color: #646cff !important;
 }
 .theme-light .add-user-actions .btn:focus-visible {
-  outline: 3px solid rgba(96, 165, 250, 0.18);
-  outline-offset: 2px;
+	outline: 3px solid rgba(96, 165, 250, 0.18);
+	outline-offset: 2px;
 }
 
 /* Add Task overlay: make Cancel (ghost) button appear black on hover in light theme
    (finalized near end of file to avoid accidental overrides) */
 
 .theme-light {
-  /* softer, more subtle bright background */
-  /* more white in the middle; blue concentrated near the bottom */
-  --bg: linear-gradient(180deg, #ffffff, #f6fdff);
-  --surface: #ffffff;
-  --muted-surface: #f8fafc;
-  --text: #071422;
-  --muted-text: #55636a;
-  --accent: #96e1ff;
-  --accent-strong: #63a8fc;
-  --accent-active: #5ad0ff;
-  --accent-strong-active: #2f8cfe;
-  --danger: #ef4444;
+	/* softer, more subtle bright background */
+	/* more white in the middle; blue concentrated near the bottom */
+	--bg: linear-gradient(180deg, #ffffff, #f6fdff);
+	--surface: #ffffff;
+	--muted-surface: #f8fafc;
+	--text: #071422;
+	--muted-text: #55636a;
+	--accent: #96e1ff;
+	--accent-strong: #63a8fc;
+	--accent-active: #5ad0ff;
+	--accent-strong-active: #2f8cfe;
+	--danger: #ef4444;
 }
 
 /* Theme toggle button (top-right) - ghost style */
 .theme-toggle {
-  position: fixed;
-  top: 12px;
-  right: 12px;
-  z-index: 9999;
-  background: transparent;
-  color: var(--text);
-  width: 40px;
-  height: 40px;
-  border-radius: 8px;
-  display: inline-flex;
+	position: fixed;
+	top: 12px;
+	right: 12px;
+	z-index: 9999;
+	background: transparent;
+	color: var(--text);
+	width: 40px;
+	height: 40px;
+	border-radius: 8px;
+	display: inline-flex;
 
-  align-items: center;
-  justify-content: center;
+	align-items: center;
+	justify-content: center;
 
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  box-shadow: none;
-  cursor: pointer;
-  transition:
-    background 0.12s ease,
-    border-color 0.12s ease,
-    transform 0.12s ease;
+	border: 1px solid rgba(255, 255, 255, 0.06);
+	box-shadow: none;
+	cursor: pointer;
+	transition:
+		background 0.12s ease,
+		border-color 0.12s ease,
+		transform 0.12s ease;
 }
 
 /* Final enforcement for Add Task Cancel button: ensure black text on hover in light theme */
 html.theme-light .overlay-panel .form-actions .btn.btn-ghost:hover {
-  color: #000000;
-  background: rgba(7, 20, 34, 0.04);
-  border-color: #646cff;
+	color: #000000;
+	background: rgba(7, 20, 34, 0.04);
+	border-color: #646cff;
 }
 
 .theme-toggle:hover {
-  background: rgba(255, 255, 255, 0.03);
-  border-color: rgba(255, 255, 255, 0.12);
-  transform: translateY(-1px);
+	background: rgba(255, 255, 255, 0.03);
+	border-color: rgba(255, 255, 255, 0.12);
+	transform: translateY(-1px);
 }
 .theme-light .theme-toggle {
-  border-color: rgba(7, 20, 34, 0.08);
+	border-color: rgba(7, 20, 34, 0.08);
 }
 .theme-light .theme-toggle:hover {
-  background: rgba(7, 20, 34, 0.04);
+	background: rgba(7, 20, 34, 0.04);
 }
 
 /* Ensure the login/auth theme-toggle is visible and colored per theme
    - In dark mode (default) make the sun icon bright blue
    - In light mode make the moon icon white for visibility */
 .auth-page .theme-toggle {
-  position: fixed;
-  top: 12px;
-  right: 12px;
-  z-index: 2000;
-  color: var(--text);
+	position: fixed;
+	top: 12px;
+	right: 12px;
+	z-index: 2000;
+	color: var(--text);
 }
 .theme-light .auth-page .theme-toggle {
-  color: #ffffff; /* moon white in bright mode */
+	color: #ffffff; /* moon white in bright mode */
 }
 :not(.theme-light) .auth-page .theme-toggle {
-  color: var(--accent-strong); /* sun bright blue in dark mode */
+	color: var(--accent-strong); /* sun bright blue in dark mode */
 }
 .auth-page .theme-toggle svg {
-  width: 22px;
-  height: 22px;
+	width: 22px;
+	height: 22px;
 }
 
 /* Page */
@@ -148,292 +148,292 @@ html.theme-light .overlay-panel .form-actions .btn.btn-ghost:hover {
 html,
 body,
 #root {
-  /* let content determine document height but never smaller than the viewport */
-  height: auto;
-  min-height: 100vh;
-  width: 100%;
-  position: relative;
+	/* let content determine document height but never smaller than the viewport */
+	height: auto;
+	min-height: 100vh;
+	width: 100%;
+	position: relative;
 
-  /* keep a plain surface color here; the actual gradient is rendered by
+	/* keep a plain surface color here; the actual gradient is rendered by
 	   the fixed pseudo-element `body::before` so it always covers the page */
-  background: var(--surface);
-  color: var(--text);
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+	background: var(--surface);
+	color: var(--text);
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 /* Render the theme gradient as a fixed, full-viewport background using a
    pseudo-element so it remains continuous regardless of content height. */
 body::before {
-  content: "";
-  /* position absolute so it grows with the document height (body is relative) */
-  position: absolute;
-  inset: 0;
-  z-index: -9999;
-  pointer-events: none;
-  background: var(--bg);
-  background-repeat: no-repeat;
-  background-position: top center;
-  /* stretch the gradient to the full document height so it scales with content */
-  background-size: 100% 100%;
-  min-height: 100vh;
+	content: "";
+	/* position absolute so it grows with the document height (body is relative) */
+	position: absolute;
+	inset: 0;
+	z-index: -9999;
+	pointer-events: none;
+	background: var(--bg);
+	background-repeat: no-repeat;
+	background-position: top center;
+	/* stretch the gradient to the full document height so it scales with content */
+	background-size: 100% 100%;
+	min-height: 100vh;
 }
 
 .app {
-  background: transparent; /* let the document root background show through */
+	background: transparent; /* let the document root background show through */
 }
 
 .theme-light .app {
-  /* apply the theme gradient and make it scale with the full document height */
-  background: var(--bg);
-  background-repeat: no-repeat;
-  background-position: top center;
-  background-size: 100% 100%;
-  background-attachment: scroll;
-  flex-direction: column;
-  gap: 20px;
+	/* apply the theme gradient and make it scale with the full document height */
+	background: var(--bg);
+	background-repeat: no-repeat;
+	background-position: top center;
+	background-size: 100% 100%;
+	background-attachment: scroll;
+	flex-direction: column;
+	gap: 20px;
 }
 
 /* Header */
 
 .header {
-  position: sticky;
-  top: 0;
-  left: 0;
-  width: 100%;
-  max-width: 100%;
-  box-sizing: border-box;
-  z-index: 100;
-  border-radius: 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 12px 16px;
-  background: var(--surface);
-  color: var(--text);
-  box-shadow: var(--elevation);
-  margin-bottom: 12px;
-  font-size: 1.1rem;
-  gap: 16px;
+	position: sticky;
+	top: 0;
+	left: 0;
+	width: 100%;
+	max-width: 100%;
+	box-sizing: border-box;
+	z-index: 100;
+	border-radius: 0;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 12px 16px;
+	background: var(--surface);
+	color: var(--text);
+	box-shadow: var(--elevation);
+	margin-bottom: 12px;
+	font-size: 1.1rem;
+	gap: 16px;
 }
 
 .header .btn {
-  background: transparent;
-  color: var(--text);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  padding: 8px 12px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition:
-    transform 0.12s ease,
-    box-shadow 0.12s ease,
-    background 0.12s ease;
+	background: transparent;
+	color: var(--text);
+	border: 1px solid rgba(255, 255, 255, 0.06);
+	padding: 8px 12px;
+	border-radius: 8px;
+	cursor: pointer;
+	transition:
+		transform 0.12s ease,
+		box-shadow 0.12s ease,
+		background 0.12s ease;
 }
 .header button:hover {
-  border-color: #646cff;
+	border-color: #646cff;
 }
 .header button:focus,
 .header button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+	outline: 4px auto -webkit-focus-ring-color;
 }
 .header .btn-primary {
-  background: linear-gradient(
-    90deg,
-    var(--accent) 0%,
-    var(--accent-strong) 100%
-  );
-  color: #04233a;
-  border: none;
-  box-shadow: 0 8px 18px rgba(96, 165, 250, 0.12);
+	background: linear-gradient(
+		90deg,
+		var(--accent) 0%,
+		var(--accent-strong) 100%
+	);
+	color: #04233a;
+	border: none;
+	box-shadow: 0 8px 18px rgba(96, 165, 250, 0.12);
 }
 .header .btn-primary:hover {
-  background: linear-gradient(
-    90deg,
-    var(--accent-active) 0%,
-    var(--accent-strong-active) 100%
-  );
-  color: #063254;
-  box-shadow: 0 2px 4px rgba(2, 20, 46, 0.16);
+	background: linear-gradient(
+		90deg,
+		var(--accent-active) 0%,
+		var(--accent-strong-active) 100%
+	);
+	color: #063254;
+	box-shadow: 0 2px 4px rgba(2, 20, 46, 0.16);
 }
 .header .btn-ghost {
-  background: transparent;
-  color: var(--accent-strong);
-  border: 1px solid rgba(124, 219, 255, 0.08);
+	background: transparent;
+	color: var(--accent-strong);
+	border: 1px solid rgba(124, 219, 255, 0.08);
 }
 
 /* Left sidebar layout (replaces top header) */
 .sidebar {
-  position: fixed;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 96px; /* narrower sidebar */
-  box-sizing: border-box;
-  padding: 10px 8px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  /* Dark mode (default): subtle vertical gradient to blend with page background */
-  background: linear-gradient(180deg, #031023 0%, var(--surface) 100%);
-  border-right: none;
-  color: var(--text); /* light text for dark background */
-  box-shadow: 1px 0 18px rgba(2, 20, 46, 0.32);
+	position: fixed;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	width: 96px; /* narrower sidebar */
+	box-sizing: border-box;
+	padding: 10px 8px;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	/* Dark mode (default): subtle vertical gradient to blend with page background */
+	background: linear-gradient(180deg, #031023 0%, var(--surface) 100%);
+	border-right: none;
+	color: var(--text); /* light text for dark background */
+	box-shadow: 1px 0 18px rgba(2, 20, 46, 0.32);
 }
 
 /* Light theme: solid bright blue sidebar with dark text */
 .theme-light .sidebar {
-  /* try the other blue in light mode (softer but still bright) */
-  background: linear-gradient(
-    180deg,
-    var(--accent) 0%,
-    var(--accent-strong) 100%
-  );
-  color: #04233a; /* dark text for contrast on bright background */
-  box-shadow: 2px 0 18px rgba(47, 140, 254, 0.12);
-  z-index: 200;
+	/* try the other blue in light mode (softer but still bright) */
+	background: linear-gradient(
+		180deg,
+		var(--accent) 0%,
+		var(--accent-strong) 100%
+	);
+	color: #04233a; /* dark text for contrast on bright background */
+	box-shadow: 2px 0 18px rgba(47, 140, 254, 0.12);
+	z-index: 200;
 }
 .sidebar .brand {
-  display: flex;
-  align-items: center;
-  gap: 8px;
+	display: flex;
+	align-items: center;
+	gap: 8px;
 }
 .sidebar .team-name {
-  font-weight: 700;
-  font-size: 1.2rem;
+	font-weight: 700;
+	font-size: 1.2rem;
 }
 .sidebar-top {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  align-items: center;
-  /* align vertically with the page title (main content padding) */
-  margin-top: 5px;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	align-items: center;
+	/* align vertically with the page title (main content padding) */
+	margin-top: 5px;
 }
 .sidebar-bottom {
-  display: flex;
-  flex-direction: column; /* stack buttons */
-  gap: 10px;
-  align-items: center;
-  margin-top: auto; /* push to bottom */
-  padding-bottom: 8px;
+	display: flex;
+	flex-direction: column; /* stack buttons */
+	gap: 10px;
+	align-items: center;
+	margin-top: auto; /* push to bottom */
+	padding-bottom: 8px;
 }
 .sidebar .logout-btn {
-  /* compact to match theme icon button */
-  width: 48px;
-  height: 48px;
-  font-size: 1.45rem; /* larger logout icon */
-  padding: 6px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  color: #000000;
-  transition:
-    background 0.12s ease,
-    transform 0.12s ease;
+	/* compact to match theme icon button */
+	width: 48px;
+	height: 48px;
+	font-size: 1.45rem; /* larger logout icon */
+	padding: 6px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	color: #000000;
+	transition:
+		background 0.12s ease,
+		transform 0.12s ease;
 }
 
 .sidebar .logout-btn:hover {
-  background: rgba(124, 219, 255, 0.06);
-  transform: translateY(-2px);
+	background: rgba(124, 219, 255, 0.06);
+	transform: translateY(-2px);
 }
 .sidebar.night .logout-btn {
-  color: #ffffff;
+	color: #ffffff;
 }
 /* make theme button slightly larger to match logout */
 .sidebar .theme-btn {
-  width: 48px;
-  height: 48px;
-  font-size: 1.45rem;
-  padding: 6px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+	width: 48px;
+	height: 48px;
+	font-size: 1.45rem;
+	padding: 6px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .sidebar .theme-btn:hover {
-  background: rgba(124, 219, 255, 0.06);
-  transform: translateY(-2px);
+	background: rgba(124, 219, 255, 0.06);
+	transform: translateY(-2px);
 }
 
 /* Theme icon color: in dark mode make it blend with the sidebar background;
    in light mode make the icon white for visibility */
 .sidebar .theme-btn {
-  color: var(--surface);
+	color: var(--surface);
 }
 .theme-light .theme-btn {
-  color: #000000;
-  border: 1px solid rgba(7, 20, 34, 0.12);
+	color: #000000;
+	border: 1px solid rgba(7, 20, 34, 0.12);
 }
 
 /* Light-theme specific hover for the theme button to keep contrast */
 .theme-light .sidebar .theme-btn:hover {
-  background: rgba(7, 20, 34, 0.04);
-  transform: translateY(-2px);
-  border-color: rgba(7, 20, 34, 0.16);
+	background: rgba(7, 20, 34, 0.04);
+	transform: translateY(-2px);
+	border-color: rgba(7, 20, 34, 0.16);
 }
 
 /* When the sidebar is in 'night' mode the visible icon is the sun — keep it blue */
 .sidebar.night .theme-btn {
-  /* make the sun icon bright — match the + button's stronger blue */
-  color: #ffffff;
+	/* make the sun icon bright — match the + button's stronger blue */
+	color: #ffffff;
 }
 
 /* Person / profile button in the sidebar (placeholder) */
 .sidebar .person-btn {
-  width: 48px;
-  height: 48px;
-  font-size: 1.45rem;
-  padding: 6px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--surface);
-  transition:
-    background 0.12s ease,
-    transform 0.12s ease;
+	width: 48px;
+	height: 48px;
+	font-size: 1.45rem;
+	padding: 6px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--surface);
+	transition:
+		background 0.12s ease,
+		transform 0.12s ease;
 }
 .sidebar .person-btn:hover {
-  background: rgba(124, 219, 255, 0.06);
-  transform: translateY(-2px);
+	background: rgba(124, 219, 255, 0.06);
+	transform: translateY(-2px);
 }
 .sidebar.night .person-btn {
-  color: #ffffff;
+	color: #ffffff;
 }
 .theme-light .person-btn {
-  color: #000000;
-  border: 1px solid rgba(7, 20, 34, 0.12);
+	color: #000000;
+	border: 1px solid rgba(7, 20, 34, 0.12);
 }
 .theme-light .sidebar .person-btn:hover {
-  background: rgba(7, 20, 34, 0.04);
-  transform: translateY(-2px);
-  border-color: rgba(7, 20, 34, 0.16);
+	background: rgba(7, 20, 34, 0.04);
+	transform: translateY(-2px);
+	border-color: rgba(7, 20, 34, 0.16);
 }
 
 /* Expand / collapse button shown at top of the sidebar (hamburger) */
 .sidebar .nav-expand-btn {
-  /* mimic sidebar theme button sizing/behavior; color comes from .theme-btn */
-  width: 48px;
-  height: 48px;
-  padding: 6px;
-  border-radius: 10px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: transparent;
-  color: var(--surface);
-  border: 1px solid currentColor; /* border matches icon color */
-  font-size: 1.1rem;
-  cursor: pointer;
-  transition:
-    transform 0.12s ease,
-    background 0.12s ease,
-    border-color 0.12s ease;
+	/* mimic sidebar theme button sizing/behavior; color comes from .theme-btn */
+	width: 48px;
+	height: 48px;
+	padding: 6px;
+	border-radius: 10px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	background: transparent;
+	color: var(--surface);
+	border: 1px solid currentColor; /* border matches icon color */
+	font-size: 1.1rem;
+	cursor: pointer;
+	transition:
+		transform 0.12s ease,
+		background 0.12s ease,
+		border-color 0.12s ease;
 }
 .sidebar .nav-expand-btn:hover {
-  border-color: #646cff;
-  background: rgba(100, 108, 255, 0.04);
-  transform: translateY(-2px);
+	border-color: #646cff;
+	background: rgba(100, 108, 255, 0.04);
+	transform: translateY(-2px);
 }
 
 /* Ensure these sidebar icon buttons show a blue border on hover in dark mode
@@ -442,78 +442,78 @@ body::before {
 :not(.theme-light) .sidebar .logout-btn:hover,
 :not(.theme-light) .sidebar .nav-expand-btn:hover,
 :not(.theme-light) .sidebar .person-btn:hover {
-  border-color: #646cff;
-  /* keep the existing background/transform behavior provided earlier */
+	border-color: #646cff;
+	/* keep the existing background/transform behavior provided earlier */
 }
 
 /* Task card buttons: lift slightly on hover for a tactile feel */
 .task-card .btn {
-  transition:
-    transform 0.12s ease,
-    box-shadow 0.12s ease;
+	transition:
+		transform 0.12s ease,
+		box-shadow 0.12s ease;
 }
 .task-card .btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 18px rgba(2, 20, 46, 0.08);
+	transform: translateY(-3px);
+	box-shadow: 0 8px 18px rgba(2, 20, 46, 0.08);
 }
 
 /* Panel that expands to the right of the sidebar */
 .nav-expand-panel {
-  position: fixed;
-  left: 96px; /* position next to the sidebar */
-  /* overlap the sidebar by 1px to avoid a 1px seam */
-  transform: translateX(-1px);
-  top: 0;
-  bottom: 0;
-  width: 260px;
-  /* darker bluish-grey surface for expanded navigation */
-  /* darker, opaque bluish-grey so content behind doesn't show through */
-  background: linear-gradient(180deg, #0c1a2d 0%, #0d1e34 55%, #0c1a2d 100%);
-  color: var(--text);
-  /* push shadow to the right so it doesn't fall onto the sidebar */
-  box-shadow: 12px 0 34px rgba(2, 20, 46, 0.56);
-  /* sit above main content (task cards) and floating controls */
-  z-index: 1400;
-  display: flex;
-  flex-direction: column;
-  padding: 16px;
-  box-sizing: border-box;
-  border-left: none; /* ensure no dividing border */
+	position: fixed;
+	left: 96px; /* position next to the sidebar */
+	/* overlap the sidebar by 1px to avoid a 1px seam */
+	transform: translateX(-1px);
+	top: 0;
+	bottom: 0;
+	width: 260px;
+	/* darker bluish-grey surface for expanded navigation */
+	/* darker, opaque bluish-grey so content behind doesn't show through */
+	background: linear-gradient(180deg, #0c1a2d 0%, #0d1e34 55%, #0c1a2d 100%);
+	color: var(--text);
+	/* push shadow to the right so it doesn't fall onto the sidebar */
+	box-shadow: 12px 0 34px rgba(2, 20, 46, 0.56);
+	/* sit above main content (task cards) and floating controls */
+	z-index: 1400;
+	display: flex;
+	flex-direction: column;
+	padding: 16px;
+	box-sizing: border-box;
+	border-left: none; /* ensure no dividing border */
 }
 .nav-panel-inner {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
 }
 .nav-actions {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
 }
 .team-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+	list-style: none;
+	margin: 0;
+	padding: 0;
 }
 .team-list li {
-  margin: 0 0 8px 0;
+	margin: 0 0 8px 0;
 }
 
 .nav-panel-btn {
-  width: 100%;
-  text-align: center;
+	width: 100%;
+	text-align: center;
 }
 .nav-panel-btn {
-  padding: 10px 12px;
-  border-radius: 8px;
-  background: transparent;
-  color: var(--text);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  cursor: pointer;
+	padding: 10px 12px;
+	border-radius: 8px;
+	background: transparent;
+	color: var(--text);
+	border: 1px solid rgba(255, 255, 255, 0.06);
+	cursor: pointer;
 }
 .nav-panel-btn:hover {
-  border-color: #646cff;
-  background: rgba(100, 108, 255, 0.04);
+	border-color: #646cff;
+	background: rgba(100, 108, 255, 0.04);
 }
 
 /* Keep the board header strip stable in dark mode when hovered (the
@@ -522,546 +522,546 @@ body::before {
 .nav-panel-btn.board-settings-group:focus,
 .board-settings-group:hover,
 .board-settings-group:focus {
-  border-color: transparent;
-  background: hsl(228, 64%, 8%);
-  transform: none;
-  box-shadow: none;
+	border-color: transparent;
+	background: hsl(228, 64%, 8%);
+	transform: none;
+	box-shadow: none;
 }
 
 /* Board settings button: text first, then icon; center and add spacing */
 .nav-panel-btn.board-settings {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
 }
 .nav-panel-btn.board-settings .board-label {
-  /* ensure label doesn't overflow; allow wrapping if needed */
-  white-space: nowrap;
+	/* ensure label doesn't overflow; allow wrapping if needed */
+	white-space: nowrap;
 }
 .nav-panel-btn.board-settings .board-icon {
-  display: inline-flex;
+	display: inline-flex;
 }
 
 /* Team settings page styles */
 .settings-panel {
-  padding: 16px;
-  background: transparent;
-  color: var(--text);
-  max-width: 720px;
+	padding: 16px;
+	background: transparent;
+	color: var(--text);
+	max-width: 720px;
 }
 .settings-panel h2 {
-  margin-top: 0;
-  /* make settings heading slightly smaller than main page title */
-  font-size: 1.15rem;
-  font-weight: 700;
+	margin-top: 0;
+	/* make settings heading slightly smaller than main page title */
+	font-size: 1.15rem;
+	font-weight: 700;
 }
 .settings-row {
-  display: flex;
-  gap: 12px;
-  align-items: center;
-  margin-bottom: 12px;
+	display: flex;
+	gap: 12px;
+	align-items: center;
+	margin-bottom: 12px;
 }
 .settings-row label {
-  min-width: 160px;
-  font-weight: 600;
+	min-width: 160px;
+	font-weight: 600;
 }
 .settings-value input {
-  width: 100%;
-  padding: 8px;
-  border-radius: 6px;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  background: rgba(2, 20, 46, 0.12);
-  color: var(--text);
+	width: 100%;
+	padding: 8px;
+	border-radius: 6px;
+	border: 1px solid rgba(255, 255, 255, 0.06);
+	background: rgba(2, 20, 46, 0.12);
+	color: var(--text);
 }
 .settings-users {
-  margin-top: 18px;
+	margin-top: 18px;
 }
 .users-grid {
-  display: grid;
-  /* bring role column closer to user column */
-  grid-template-columns: 160px 1fr;
-  gap: 8px 8px;
-  align-items: center;
+	display: grid;
+	/* bring role column closer to user column */
+	grid-template-columns: 160px 1fr;
+	gap: 8px 8px;
+	align-items: center;
 }
 .users-grid-head {
-  font-weight: 700;
-  opacity: 0.9;
+	font-weight: 700;
+	opacity: 0.9;
 }
 .users-grid-user,
 .users-grid-role {
-  padding: 8px 0;
+	padding: 8px 0;
 }
 
 /* Role actions: select + small icon button */
 .role-with-actions {
-  display: inline-flex;
-  gap: 8px;
-  align-items: center;
+	display: inline-flex;
+	gap: 8px;
+	align-items: center;
 }
 .btn-icon {
-  background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  color: inherit;
-  width: 36px;
-  height: 36px;
-  padding: 6px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 8px;
-  cursor: pointer;
-  transition:
-    transform 0.12s ease,
-    background 0.12s ease,
-    border-color 0.12s ease;
+	background: transparent;
+	border: 1px solid rgba(255, 255, 255, 0.06);
+	color: inherit;
+	width: 36px;
+	height: 36px;
+	padding: 6px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 8px;
+	cursor: pointer;
+	transition:
+		transform 0.12s ease,
+		background 0.12s ease,
+		border-color 0.12s ease;
 }
 .btn-icon svg {
-  display: block;
-  color: inherit;
+	display: block;
+	color: inherit;
 }
 .remove-user-btn:hover {
-  transform: translateY(-2px);
-  background: rgba(255, 77, 79, 0.06);
-  border-color: #ff4d4f;
-  color: #ff4d4f;
+	transform: translateY(-2px);
+	background: rgba(255, 77, 79, 0.06);
+	border-color: #ff4d4f;
+	color: #ff4d4f;
 }
 .remove-user-btn:focus-visible {
-  outline: 3px solid rgba(255, 77, 79, 0.14);
-  outline-offset: 2px;
+	outline: 3px solid rgba(255, 77, 79, 0.14);
+	outline-offset: 2px;
 }
 
 /* Add-user row styles */
 .add-user-input {
-  width: 100%;
-  padding: 8px;
-  border-radius: 6px;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  background: transparent;
-  color: var(--text);
-  box-sizing: border-box;
-  transition:
-    border-color 0.12s ease,
-    background 0.12s ease,
-    transform 0.08s ease,
-    box-shadow 0.12s ease;
+	width: 100%;
+	padding: 8px;
+	border-radius: 6px;
+	border: 1px solid rgba(255, 255, 255, 0.06);
+	background: transparent;
+	color: var(--text);
+	box-sizing: border-box;
+	transition:
+		border-color 0.12s ease,
+		background 0.12s ease,
+		transform 0.08s ease,
+		box-shadow 0.12s ease;
 }
 .add-user-actions {
-  display: flex;
-  gap: 8px;
-  align-items: center;
+	display: flex;
+	gap: 8px;
+	align-items: center;
 }
 .add-user-actions select {
-  padding: 8px;
-  border-radius: 6px;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  background: transparent;
-  color: var(--text);
+	padding: 8px;
+	border-radius: 6px;
+	border: 1px solid rgba(255, 255, 255, 0.06);
+	background: transparent;
+	color: var(--text);
 }
 .add-user-actions .btn {
-  padding: 8px 10px;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  background: transparent;
-  transition:
-    transform 0.12s ease,
-    background 0.12s ease,
-    border-color 0.12s ease;
+	padding: 8px 10px;
+	border: 1px solid rgba(255, 255, 255, 0.06);
+	background: transparent;
+	transition:
+		transform 0.12s ease,
+		background 0.12s ease,
+		border-color 0.12s ease;
 }
 
 /* UserSettings teams grid */
 .teams-grid {
-  display: grid;
-  grid-template-columns: 160px 200px;
-  gap: 8px 12px;
-  align-items: center;
+	display: grid;
+	grid-template-columns: 160px 200px;
+	gap: 8px 12px;
+	align-items: center;
 }
 .teams-grid-head {
-  font-weight: 700;
-  opacity: 0.9;
+	font-weight: 700;
+	opacity: 0.9;
 }
 .teams-grid-name,
 .teams-grid-id,
 .teams-grid-action {
-  padding: 8px 0;
+	padding: 8px 0;
 }
 .teams-grid .id-actions {
-  margin-left: 10px;
-  display: inline-flex;
-  vertical-align: middle;
+	margin-left: 10px;
+	display: inline-flex;
+	vertical-align: middle;
 }
 .teams-grid .team-id-value {
-  display: inline-block;
+	display: inline-block;
 }
 
 /* Assign users multi-select for TaskForm */
 .assign-users {
-  max-height: 160px;
-  overflow: auto;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  padding: 8px;
-  border-radius: 6px;
-  background: rgba(2, 20, 46, 0.04);
+	max-height: 160px;
+	overflow: auto;
+	border: 1px solid rgba(255, 255, 255, 0.06);
+	padding: 8px;
+	border-radius: 6px;
+	background: rgba(2, 20, 46, 0.04);
 }
 .assign-users .user-item {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 6px 4px;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 6px 4px;
 }
 .assign-users .user-item + .user-item {
-  border-top: 1px solid rgba(255, 255, 255, 0.02);
+	border-top: 1px solid rgba(255, 255, 255, 0.02);
 }
 .assign-users .user-name {
-  margin-left: 6px;
+	margin-left: 6px;
 }
 .remove-team-btn:hover {
-  transform: translateY(-2px);
-  background: rgba(255, 77, 79, 0.06);
-  border-color: #ff4d4f;
-  color: #ff4d4f;
+	transform: translateY(-2px);
+	background: rgba(255, 77, 79, 0.06);
+	border-color: #ff4d4f;
+	color: #ff4d4f;
 }
 .remove-team-btn:focus-visible {
-  outline: 3px solid rgba(255, 77, 79, 0.14);
-  outline-offset: 2px;
+	outline: 3px solid rgba(255, 77, 79, 0.14);
+	outline-offset: 2px;
 }
 
 /* Hover / focus states to match icon/gear button behavior */
 .add-user-input:focus {
-  outline: none;
-  border-color: rgba(96, 165, 250, 0.6);
-  box-shadow: 0 6px 18px rgba(96, 165, 250, 0.06);
-  transform: translateY(-1px);
-  background: rgba(124, 219, 255, 0.02);
+	outline: none;
+	border-color: rgba(96, 165, 250, 0.6);
+	box-shadow: 0 6px 18px rgba(96, 165, 250, 0.06);
+	transform: translateY(-1px);
+	background: rgba(124, 219, 255, 0.02);
 }
 .add-user-actions .btn:hover {
-  transform: translateY(-2px);
-  background: rgba(124, 219, 255, 0.06);
-  border-color: rgba(124, 219, 255, 0.16);
+	transform: translateY(-2px);
+	background: rgba(124, 219, 255, 0.06);
+	border-color: rgba(124, 219, 255, 0.16);
 }
 .theme-light .add-user-actions .btn:hover {
-  background: rgba(7, 20, 34, 0.04);
-  border-color: #646cff; /* show blue border on hover in light theme */
+	background: rgba(7, 20, 34, 0.04);
+	border-color: #646cff; /* show blue border on hover in light theme */
 }
 
 /* Make Add-user button show blue border on hover/focus in dark mode */
 :not(.theme-light) .add-user-actions .btn:hover {
-  border-color: #646cff;
+	border-color: #646cff;
 }
 :not(.theme-light) .add-user-actions .btn:focus-visible {
-  outline: 3px solid rgba(96, 165, 250, 0.18);
-  outline-offset: 2px;
+	outline: 3px solid rgba(96, 165, 250, 0.18);
+	outline-offset: 2px;
 }
 .add-user-actions .btn:disabled {
-  opacity: 0.5;
-  transform: none;
-  cursor: not-allowed;
+	opacity: 0.5;
+	transform: none;
+	cursor: not-allowed;
 }
 
 /* Light theme: use darker border so inputs and button stand out */
 .theme-light .add-user-input {
-  background: #ffffff;
-  color: #04233a;
-  border: 1px solid rgba(7, 20, 34, 0.12);
+	background: #ffffff;
+	color: #04233a;
+	border: 1px solid rgba(7, 20, 34, 0.12);
 }
 .theme-light .add-user-input:focus {
-  border-color: rgba(7, 20, 34, 0.16);
-  box-shadow: none;
+	border-color: rgba(7, 20, 34, 0.16);
+	box-shadow: none;
 }
 .theme-light .add-user-actions .btn {
-  border: 1px solid rgba(7, 20, 34, 0.12);
-  background: transparent;
-  color: #04233a;
+	border: 1px solid rgba(7, 20, 34, 0.12);
+	background: transparent;
+	color: #04233a;
 }
 .theme-light .add-user-actions .btn:hover {
-  background: rgba(7, 20, 34, 0.04);
-  border-color: rgba(7, 20, 34, 0.16);
+	background: rgba(7, 20, 34, 0.04);
+	border-color: rgba(7, 20, 34, 0.16);
 }
 .settings-actions {
-  margin-top: 18px;
-  display: flex;
-  gap: 12px;
+	margin-top: 18px;
+	display: flex;
+	gap: 12px;
 }
 .btn-danger {
-  background: #ff4d4f;
-  border: none;
-  color: white;
+	background: #ff4d4f;
+	border: none;
+	color: white;
 }
 
 .btn-danger:hover {
-  transform: translateY(-2px);
-  background: rgba(255, 77, 79, 0.92);
-  border-color: #ff4d4f;
-  box-shadow: 0 6px 18px rgba(255, 77, 79, 0.06);
-  color: white;
+	transform: translateY(-2px);
+	background: rgba(255, 77, 79, 0.92);
+	border-color: #ff4d4f;
+	box-shadow: 0 6px 18px rgba(255, 77, 79, 0.06);
+	color: white;
 }
 .btn-danger:focus-visible {
-  outline: 3px solid rgba(255, 77, 79, 0.14);
-  outline-offset: 2px;
+	outline: 3px solid rgba(255, 77, 79, 0.14);
+	outline-offset: 2px;
 }
 
 /* Calendar page layout */
 .calendar-table {
-  width: 100%;
-  /* use separated cells with spacing so individual day cards show clearly */
-  border-collapse: separate;
-  border-spacing: 8px;
+	width: 100%;
+	/* use separated cells with spacing so individual day cards show clearly */
+	border-collapse: separate;
+	border-spacing: 8px;
 }
 .day-cell,
 .empty-cell {
-  width: 14.28%;
-  height: 110px; /* slightly smaller to make calendar more compact */
-  vertical-align: top;
-  padding: 8px;
-  background: rgba(2, 20, 46, 0.02);
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.04);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.02);
-  position: relative; /* allow absolute positioning of the day button */
+	width: 14.28%;
+	height: 110px; /* slightly smaller to make calendar more compact */
+	vertical-align: top;
+	padding: 8px;
+	background: rgba(2, 20, 46, 0.02);
+	border-radius: 10px;
+	border: 1px solid rgba(255, 255, 255, 0.04);
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.02);
+	position: relative; /* allow absolute positioning of the day button */
 }
 .calendar-header {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 12px;
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	margin-bottom: 12px;
 }
 .calendar-table th {
-  text-align: center;
-  padding: 8px 6px;
-  opacity: 0.9;
+	text-align: center;
+	padding: 8px 6px;
+	opacity: 0.9;
 }
 .day-btn {
-  width: 36px;
-  height: 36px;
-  border-radius: 8px;
-  border: 1px solid transparent;
-  background: transparent;
-  cursor: pointer;
-  /* keep the button in the top-left while centering its label */
-  position: absolute;
-  left: 8px;
-  top: 8px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 600;
-  line-height: 1;
+	width: 36px;
+	height: 36px;
+	border-radius: 8px;
+	border: 1px solid transparent;
+	background: transparent;
+	cursor: pointer;
+	/* keep the button in the top-left while centering its label */
+	position: absolute;
+	left: 8px;
+	top: 8px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: 600;
+	line-height: 1;
 }
 .day-cell:hover,
 .empty-cell:hover {
-  border-color: rgba(100, 108, 255, 0.12);
-  background: rgba(100, 108, 255, 0.02);
+	border-color: rgba(100, 108, 255, 0.12);
+	background: rgba(100, 108, 255, 0.02);
 }
 .day-btn.selected {
-  background: linear-gradient(90deg, var(--accent), var(--accent-strong));
-  color: #04233a;
-  /* avoid visible border seams — rely on inset shadow for left-edge masking */
-  border: none;
-  background-clip: padding-box;
-  box-shadow: inset 1px 0 0 rgba(2, 20, 46, 0.5);
+	background: linear-gradient(90deg, var(--accent), var(--accent-strong));
+	color: #04233a;
+	/* avoid visible border seams — rely on inset shadow for left-edge masking */
+	border: none;
+	background-clip: padding-box;
+	box-shadow: inset 1px 0 0 rgba(2, 20, 46, 0.5);
 }
 
 /* Light-theme: use a light inset to mask the seam instead of a dark stripe */
 .theme-light .day-btn.selected {
-  /* lighten the inset so the left edge blends with the light cell background */
-  box-shadow: inset 1px 0 0 rgba(255, 255, 255, 0.85);
-  border: 1px solid rgba(7, 20, 34, 0.08);
-  background-clip: padding-box;
+	/* lighten the inset so the left edge blends with the light cell background */
+	box-shadow: inset 1px 0 0 rgba(255, 255, 255, 0.85);
+	border: 1px solid rgba(7, 20, 34, 0.08);
+	background-clip: padding-box;
 }
 .cell-tasks {
-  margin-top: 44px; /* ensure tasks render beneath the small day button */
-  display: block; /* use block layout to ensure scrolling inside table cells */
-  max-height: 56px; /* fixed visible area before scrolling */
-  overflow-y: auto;
-  overflow-x: hidden;
-  -webkit-overflow-scrolling: touch;
+	margin-top: 44px; /* ensure tasks render beneath the small day button */
+	display: block; /* use block layout to ensure scrolling inside table cells */
+	max-height: 56px; /* fixed visible area before scrolling */
+	overflow-y: auto;
+	overflow-x: hidden;
+	-webkit-overflow-scrolling: touch;
 }
 .cell-task-title {
-  font-size: 0.95rem;
-  color: var(--text);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  background: rgba(2, 20, 46, 0.06);
-  padding: 4px 6px;
-  border-radius: 6px;
-  font-weight: 600;
-  display: block;
-  margin-bottom: 4px;
+	font-size: 0.95rem;
+	color: var(--text);
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	background: rgba(2, 20, 46, 0.06);
+	padding: 4px 6px;
+	border-radius: 6px;
+	font-weight: 600;
+	display: block;
+	margin-bottom: 4px;
 }
 
 /* Scrollbar styling for the small day-box task list */
 .cell-tasks::-webkit-scrollbar {
-  width: 8px;
+	width: 8px;
 }
 .cell-tasks::-webkit-scrollbar-track {
-  background: transparent;
+	background: transparent;
 }
 .cell-tasks::-webkit-scrollbar-thumb {
-  background: rgba(2, 20, 46, 0.12);
-  border-radius: 6px;
+	background: rgba(2, 20, 46, 0.12);
+	border-radius: 6px;
 }
 .cell-tasks {
-  scrollbar-width: thin; /* Firefox */
-  scrollbar-color: rgba(2, 20, 46, 0.12) transparent;
+	scrollbar-width: thin; /* Firefox */
+	scrollbar-color: rgba(2, 20, 46, 0.12) transparent;
 }
 
 .task-cards {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
 }
 .task-card {
-  background: rgba(2, 20, 46, 0.03);
-  padding: 8px; /* smaller card padding */
-  border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.03);
-  font-size: 1.05rem; /* larger base font for content */
+	background: rgba(2, 20, 46, 0.03);
+	padding: 8px; /* smaller card padding */
+	border-radius: 8px;
+	border: 1px solid rgba(255, 255, 255, 0.03);
+	font-size: 1.05rem; /* larger base font for content */
 }
 .task-card-title {
-  margin: 0 0 6px 0;
-  font-size: 1.25rem; /* larger title font */
+	margin: 0 0 6px 0;
+	font-size: 1.25rem; /* larger title font */
 }
 .task-card-desc {
-  margin: 0 0 8px 0;
-  color: var(--muted-text);
-  font-size: 1.05rem; /* slightly bigger description font */
+	margin: 0 0 8px 0;
+	color: var(--muted-text);
+	font-size: 1.05rem; /* slightly bigger description font */
 }
 .task-meta {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-  font-size: 1rem; /* larger metadata font */
+	display: flex;
+	gap: 8px;
+	align-items: center;
+	font-size: 1rem; /* larger metadata font */
 }
 
 /* Priority label inside task cards */
 .task-priority {
-  font-weight: 700;
-  font-size: 1.05rem;
+	font-weight: 700;
+	font-size: 1.05rem;
 }
 .priority.high {
-  color: #e53935; /* red */
+	color: #e53935; /* red */
 }
 .priority.medium {
-  color: #fbc02d; /* yellow */
+	color: #fbc02d; /* yellow */
 }
 .priority.low {
-  color: #43a047; /* green */
+	color: #43a047; /* green */
 }
 .day-btn:hover {
-  border-color: rgba(100, 108, 255, 0.12);
+	border-color: rgba(100, 108, 255, 0.12);
 }
 .day-btn.selected {
-  background: linear-gradient(90deg, var(--accent), var(--accent-strong));
-  color: #04233a;
-  border: none;
-  background-clip: padding-box;
-  box-shadow: inset 1px 0 0 rgba(2, 20, 46, 0.5);
+	background: linear-gradient(90deg, var(--accent), var(--accent-strong));
+	color: #04233a;
+	border: none;
+	background-clip: padding-box;
+	box-shadow: inset 1px 0 0 rgba(2, 20, 46, 0.5);
 }
 .calendar-right {
-  position: relative;
+	position: relative;
 }
 
 .calendar-page {
-  display: grid;
-  grid-template-columns: 2fr 1fr; /* wider calendar + task details */
-  gap: 20px;
-  width: 100%;
+	display: grid;
+	grid-template-columns: 2fr 1fr; /* wider calendar + task details */
+	gap: 20px;
+	width: 100%;
 }
 .day-box {
-  background: rgba(2, 20, 46, 0.06);
-  padding: 16px;
-  border-radius: 12px;
-  box-shadow: var(--elevation);
+	background: rgba(2, 20, 46, 0.06);
+	padding: 16px;
+	border-radius: 12px;
+	box-shadow: var(--elevation);
 }
 .day-box-title {
-  margin: 0 0 8px 0;
+	margin: 0 0 8px 0;
 }
 .muted {
-  opacity: 0.8;
+	opacity: 0.8;
 }
 
 @media (max-width: 900px) {
-  .calendar-page {
-    grid-template-columns: 1fr;
-  }
-  .calendar-right {
-    order: 2;
-  }
+	.calendar-page {
+		grid-template-columns: 1fr;
+	}
+	.calendar-right {
+		order: 2;
+	}
 }
 
 .danger-label {
-  min-width: 160px;
-  font-weight: 700;
-  color: #ff4d4f;
+	min-width: 160px;
+	font-weight: 700;
+	color: #ff4d4f;
 }
 
 /* Board settings group: label + icon (behaves like one control) */
 .board-settings-group {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  /* extend to the panel edges so the header strip fills the panel */
-  margin: -16px -16px 1px -17px;
-  padding: 12px 50px;
-  box-sizing: border-box;
-  width: calc(100% + 33px);
-  /* solid blue header strip */
-  background: hsl(228, 64%, 8%);
-  color: #ffffff;
-  border: none;
-  border-radius: 0;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	/* extend to the panel edges so the header strip fills the panel */
+	margin: -16px -16px 1px -17px;
+	padding: 12px 50px;
+	box-sizing: border-box;
+	width: calc(100% + 33px);
+	/* solid blue header strip */
+	background: hsl(228, 64%, 8%);
+	color: #ffffff;
+	border: none;
+	border-radius: 0;
 }
 .board-settings-group .board-label-btn {
-  flex: 1 1 auto;
-  text-align: left;
-  background: transparent; /* let the group's blue show through */
-  border: none;
-  padding: 10px 12px;
-  color: inherit;
-  cursor: pointer;
+	flex: 1 1 auto;
+	text-align: left;
+	background: transparent; /* let the group's blue show through */
+	border: none;
+	padding: 10px 12px;
+	color: inherit;
+	cursor: pointer;
 }
 .board-settings-group .board-label-btn:focus {
-  outline: 3px solid rgba(255, 255, 255, 0.14);
+	outline: 3px solid rgba(255, 255, 255, 0.14);
 }
 .board-settings-group .board-icon-btn {
-  width: 48px;
-  height: 48px;
-  padding: 6px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 10px;
-  background: transparent; /* gear should be transparent */
-  border: 1px solid currentColor;
-  color: inherit;
-  transition:
-    transform 0.12s ease,
-    background 0.12s ease,
-    border-color 0.12s ease;
+	width: 48px;
+	height: 48px;
+	padding: 6px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 10px;
+	background: transparent; /* gear should be transparent */
+	border: 1px solid currentColor;
+	color: inherit;
+	transition:
+		transform 0.12s ease,
+		background 0.12s ease,
+		border-color 0.12s ease;
 }
 /* In light theme make the gear border darker for contrast */
 .theme-light .board-settings-group {
-  background: var(--accent);
-  color: #04233a;
+	background: var(--accent);
+	color: #04233a;
 }
 .theme-light .board-settings-group .board-icon-btn {
-  border: 1px solid rgba(7, 20, 34, 0.12);
+	border: 1px solid rgba(7, 20, 34, 0.12);
 }
 /* ensure the page title gear uses the same light-theme border as the theme button */
 .theme-light .page-title-gear {
-  border: 1px solid rgba(7, 20, 34, 0.12);
+	border: 1px solid rgba(7, 20, 34, 0.12);
 }
 
 /* Keep the board header blue in light theme when hovered */
 .theme-light .board-settings-group:hover,
 .theme-light .board-settings-group:focus {
-  background: var(--accent);
-  color: #04233a;
+	background: var(--accent);
+	color: #04233a;
 }
 .theme-light .nav-panel-btn.board-settings:hover,
 .theme-light .nav-panel-btn.board-settings:focus {
-  background: var(--accent);
-  border-color: transparent;
+	background: var(--accent);
+	border-color: transparent;
 }
 
 /* Prevent header from changing in dark theme on hover */
@@ -1069,18 +1069,18 @@ body::before {
 .theme-dark .board-settings-group:focus,
 .sidebar.night .board-settings-group:hover,
 .sidebar.night .board-settings-group:focus {
-  background: var(--accent-active);
-  color: var(--text);
+	background: var(--accent-active);
+	color: var(--text);
 }
 
 /* Remove sidebar right shadow and nudge nav panel to overlap the seam */
 .sidebar {
-  box-shadow: none;
-  padding-right: 0;
+	box-shadow: none;
+	padding-right: 0;
 }
 .nav-expand-panel {
-  transform: translateX(-2px);
-  border-left: none;
+	transform: translateX(-2px);
+	border-left: none;
 }
 
 /* Disable hover/pointer visual changes for the group buttons, but allow
@@ -1088,278 +1088,278 @@ body::before {
 .board-settings-group .btn:not(.board-icon-btn):hover,
 .board-settings-group .btn:not(.board-icon-btn):active,
 .board-settings-group .btn:not(.board-icon-btn):focus {
-  transform: none;
-  box-shadow: none;
-  background: transparent;
-  border-color: inherit;
+	transform: none;
+	box-shadow: none;
+	background: transparent;
+	border-color: inherit;
 }
 
 /* Small team title area in settings page */
 .settings-team-title {
-  margin: 8px 0 12px 0;
+	margin: 8px 0 12px 0;
 }
 .settings-team-name {
-  background: transparent;
-  border: none;
-  color: var(--accent);
-  font-weight: 700;
-  cursor: pointer;
-  padding: 0;
+	background: transparent;
+	border: none;
+	color: var(--accent);
+	font-weight: 700;
+	cursor: pointer;
+	padding: 0;
 }
 .settings-team-name:focus {
-  outline: 3px solid rgba(100, 108, 255, 0.14);
+	outline: 3px solid rgba(100, 108, 255, 0.14);
 }
 
 /* plain button helper */
 .btn-plain {
-  background: transparent;
-  border: none;
-  padding: 0;
-  margin: 0;
-  cursor: pointer;
-  color: inherit;
+	background: transparent;
+	border: none;
+	padding: 0;
+	margin: 0;
+	cursor: pointer;
+	color: inherit;
 }
 .page-title-btn {
-  /* make the main page title (My tasks) larger than the settings title */
-  font-size: 1.6rem;
-  font-weight: 800;
-  line-height: 1.1;
+	/* make the main page title (My tasks) larger than the settings title */
+	font-size: 1.6rem;
+	font-weight: 800;
+	line-height: 1.1;
 }
 .page-title-gear {
-  margin-left: 8px;
-  width: 36px;
-  height: 36px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  background: transparent;
-  transition:
-    transform 0.12s ease,
-    background 0.12s ease;
+	margin-left: 8px;
+	width: 36px;
+	height: 36px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 8px;
+	border: 1px solid rgba(255, 255, 255, 0.06);
+	background: transparent;
+	transition:
+		transform 0.12s ease,
+		background 0.12s ease;
 }
 .page-title-gear:hover {
-  transform: translateY(-4px);
-  background: rgba(255, 255, 255, 0.04);
+	transform: translateY(-4px);
+	background: rgba(255, 255, 255, 0.04);
 }
 
 /* Make the page title label have no hover visual effect; allow the gear to
    behave like other icon buttons (hover lift, border color change) */
 .page-title-btn:hover {
-  transform: none;
-  background: transparent;
-  border-color: transparent;
+	transform: none;
+	background: transparent;
+	border-color: transparent;
 }
 
 /* Make gear buttons (board settings and page title gear) behave like the
    sidebar icon buttons: size, hover lift, border and activation color */
 .board-settings-group .board-icon-btn,
 .page-title-gear {
-  width: 48px;
-  height: 48px;
-  padding: 6px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 10px;
-  background: transparent;
-  /* match theme toggle / sidebar button border in dark mode */
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  color: inherit;
-  transition:
-    transform 0.12s ease,
-    background 0.12s ease,
-    border-color 0.12s ease;
+	width: 48px;
+	height: 48px;
+	padding: 6px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 10px;
+	background: transparent;
+	/* match theme toggle / sidebar button border in dark mode */
+	border: 1px solid rgba(255, 255, 255, 0.06);
+	color: inherit;
+	transition:
+		transform 0.12s ease,
+		background 0.12s ease,
+		border-color 0.12s ease;
 }
 .board-settings-group .board-icon-btn:hover,
 .page-title-gear:hover {
-  transform: translateY(-2px);
-  background: rgba(100, 108, 255, 0.04);
-  border-color: #646cff;
+	transform: translateY(-2px);
+	background: rgba(100, 108, 255, 0.04);
+	border-color: #646cff;
 }
 .board-settings-group .board-icon-btn:focus-visible,
 .page-title-gear:focus-visible {
-  outline: 3px solid rgba(96, 165, 250, 0.18);
-  outline-offset: 2px;
+	outline: 3px solid rgba(96, 165, 250, 0.18);
+	outline-offset: 2px;
 }
 
 /* List expand indicator (triangle) inside the List teams button */
 .nav-expand-toggle {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
 }
 .nav-expand-toggle .expand-indicator {
-  /* triangle pointing right using border trick (smaller) */
-  display: inline-block;
-  width: 0;
-  height: 0;
-  margin-left: 6px;
-  border-top: 4px solid transparent;
-  border-bottom: 4px solid transparent;
-  border-left: 6px solid currentColor;
-  transition: transform 0.12s ease;
+	/* triangle pointing right using border trick (smaller) */
+	display: inline-block;
+	width: 0;
+	height: 0;
+	margin-left: 6px;
+	border-top: 4px solid transparent;
+	border-bottom: 4px solid transparent;
+	border-left: 6px solid currentColor;
+	transition: transform 0.12s ease;
 }
 /* rotate triangle down when expanded */
 .nav-expand-toggle[aria-expanded="true"] .expand-indicator {
-  transform: rotate(90deg);
+	transform: rotate(90deg);
 }
 
 /* Make the team item visually darker / more prominent */
 .nav-expand-panel .team-item {
-  background: rgba(2, 20, 46, 0.56); /* darker fill */
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  color: var(--text);
-  /* ensure gradient/background doesn't bleed into the border area */
-  background-clip: padding-box;
+	background: rgba(2, 20, 46, 0.56); /* darker fill */
+	border: 1px solid rgba(255, 255, 255, 0.08);
+	color: var(--text);
+	/* ensure gradient/background doesn't bleed into the border area */
+	background-clip: padding-box;
 }
 .theme-light .nav-expand-panel .team-item {
-  background: rgba(7, 20, 34, 0.06);
-  border: 1px solid rgba(7, 20, 34, 0.06);
+	background: rgba(7, 20, 34, 0.06);
+	border: 1px solid rgba(7, 20, 34, 0.06);
 }
 
 /* Active/selected team styling */
 .nav-expand-panel .team-item.active {
-  background: linear-gradient(
-    90deg,
-    var(--accent-active),
-    var(--accent-strong-active)
-  );
-  color: #ffffff;
-  /* remove outer border to avoid conflicting light edges and rely on inset shadow */
-  border: none;
-  background-clip: padding-box;
-  box-shadow: inset 1px 0 0 rgba(2, 20, 46, 0.6);
+	background: linear-gradient(
+		90deg,
+		var(--accent-active),
+		var(--accent-strong-active)
+	);
+	color: #ffffff;
+	/* remove outer border to avoid conflicting light edges and rely on inset shadow */
+	border: none;
+	background-clip: padding-box;
+	box-shadow: inset 1px 0 0 rgba(2, 20, 46, 0.6);
 }
 .theme-light .nav-expand-panel .team-item.active {
-  background: linear-gradient(
-    90deg,
-    var(--accent-active),
-    var(--accent-strong-active)
-  );
-  color: #072033;
-  border: none;
-  background-clip: padding-box;
-  /* subtle inset to keep left edge consistent in light theme */
-  box-shadow: inset 1px 0 0 rgba(255, 255, 255, 0.06);
+	background: linear-gradient(
+		90deg,
+		var(--accent-active),
+		var(--accent-strong-active)
+	);
+	color: #072033;
+	border: none;
+	background-clip: padding-box;
+	/* subtle inset to keep left edge consistent in light theme */
+	box-shadow: inset 1px 0 0 rgba(255, 255, 255, 0.06);
 }
 
 .nav-expand-panel .team-item.active:focus-visible {
-  outline: 3px solid rgba(96, 165, 250, 0.18);
-  outline-offset: 2px;
+	outline: 3px solid rgba(96, 165, 250, 0.18);
+	outline-offset: 2px;
 }
 
 /* Join modal overlay and dialog */
 .modal-overlay {
-  position: fixed;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(2, 20, 46, 0.56);
-  z-index: 2400; /* above the nav panel and other overlays */
+	position: fixed;
+	inset: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: rgba(2, 20, 46, 0.56);
+	z-index: 2400; /* above the nav panel and other overlays */
 }
 .join-modal {
-  width: 520px; /* wider modal on desktop */
-  max-width: 94%;
-  background: var(--surface);
-  color: var(--text);
-  border-radius: 18px; /* more rounded */
-  padding: 22px;
-  box-shadow: 0 28px 80px rgba(2, 20, 46, 0.6);
-  position: relative;
-  box-sizing: border-box;
+	width: 520px; /* wider modal on desktop */
+	max-width: 94%;
+	background: var(--surface);
+	color: var(--text);
+	border-radius: 18px; /* more rounded */
+	padding: 22px;
+	box-shadow: 0 28px 80px rgba(2, 20, 46, 0.6);
+	position: relative;
+	box-sizing: border-box;
 }
 .theme-light .join-modal {
-  background: #ffffff;
-  color: #04233a;
+	background: #ffffff;
+	color: #04233a;
 }
 .join-modal h3 {
-  margin: 0 0 12px 0;
-  font-size: 1.4rem; /* slightly larger title */
-  font-weight: 700;
+	margin: 0 0 12px 0;
+	font-size: 1.4rem; /* slightly larger title */
+	font-weight: 700;
 }
 .modal-close {
-  position: absolute;
-  right: 10px;
-  top: 10px;
-  background: transparent;
-  border: none; /* remove visible border */
-  font-size: 18px;
-  width: 36px;
-  height: 36px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  cursor: pointer;
-  color: var(--muted-text);
-  transition:
-    transform 0.12s ease,
-    background 0.12s ease,
-    color 0.12s ease;
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	background: transparent;
+	border: none; /* remove visible border */
+	font-size: 18px;
+	width: 36px;
+	height: 36px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+	cursor: pointer;
+	color: var(--muted-text);
+	transition:
+		transform 0.12s ease,
+		background 0.12s ease,
+		color 0.12s ease;
 }
 .join-modal .modal-body label {
-  display: block;
-  font-size: 1rem;
-  margin-bottom: 10px;
+	display: block;
+	font-size: 1rem;
+	margin-bottom: 10px;
 }
 .join-modal .modal-body input {
-  width: 100%;
-  padding: 10px 12px;
-  border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  background: transparent;
-  color: var(--text);
-  box-sizing: border-box;
-  margin-top: 6px;
+	width: 100%;
+	padding: 10px 12px;
+	border-radius: 8px;
+	border: 1px solid rgba(255, 255, 255, 0.06);
+	background: transparent;
+	color: var(--text);
+	box-sizing: border-box;
+	margin-top: 6px;
 }
 .theme-light .join-modal .modal-body input {
-  border: 1px solid rgba(7, 20, 34, 0.06);
-  background: #ffffff;
-  color: #04233a;
+	border: 1px solid rgba(7, 20, 34, 0.06);
+	background: #ffffff;
+	color: #04233a;
 }
 .modal-actions {
-  display: flex;
-  gap: 8px;
-  justify-content: flex-end;
-  margin-top: 14px;
+	display: flex;
+	gap: 8px;
+	justify-content: flex-end;
+	margin-top: 14px;
 }
 
 /* Make action buttons slightly larger in modal */
 .modal-actions .btn {
-  font-size: 0.95rem;
-  padding: 8px 12px;
+	font-size: 0.95rem;
+	padding: 8px 12px;
 }
 
 /* Hover/focus effect for the close X */
 .modal-close:hover {
-  transform: scale(1.08);
-  background: rgba(255, 255, 255, 0.04);
-  color: var(--accent); /* highlight bright blue (main color) on hover */
+	transform: scale(1.08);
+	background: rgba(255, 255, 255, 0.04);
+	color: var(--accent); /* highlight bright blue (main color) on hover */
 }
 .modal-close:focus-visible {
-  outline: 3px solid rgba(96, 165, 250, 0.16);
+	outline: 3px solid rgba(96, 165, 250, 0.16);
 }
 
 /* Responsive: when sidebar becomes top bar, place the panel under the bar */
 @media (max-width: 720px) {
-  .nav-expand-panel {
-    left: 0;
-    top: 64px;
-    bottom: auto;
-    width: 100%;
-    min-height: 120px;
-    box-shadow: 0 6px 18px rgba(2, 20, 46, 0.24);
-  }
+	.nav-expand-panel {
+		left: 0;
+		top: 64px;
+		bottom: auto;
+		width: 100%;
+		min-height: 120px;
+		box-shadow: 0 6px 18px rgba(2, 20, 46, 0.24);
+	}
 }
 
 /* Light theme: use a light grey background and dark text for the panel */
 .theme-light .nav-expand-panel {
-  background: linear-gradient(180deg, #eef2f7 0%, #e6eef8 100%);
-  color: #04233a;
-  border-left: 1px solid rgba(7, 20, 34, 0.06);
+	background: linear-gradient(180deg, #eef2f7 0%, #e6eef8 100%);
+	color: #04233a;
+	border-left: 1px solid rgba(7, 20, 34, 0.06);
 }
 
 /* Make nav-expand button and modal-close match theme button colors in night/light modes */
@@ -1367,742 +1367,742 @@ body::before {
 .sidebar.night .theme-btn,
 .sidebar.night .modal-close,
 .sidebar.night .logout-btn {
-  color: #ffffff;
-  /* make borders much less visible in dark mode so buttons blend softly */
-  border-color: rgba(255, 255, 255, 0.06);
+	color: #ffffff;
+	/* make borders much less visible in dark mode so buttons blend softly */
+	border-color: rgba(255, 255, 255, 0.06);
 }
 .theme-light .nav-expand-btn,
 .theme-light .modal-close,
 .theme-light .logout-btn {
-  color: #000000;
-  border-color: rgba(7, 20, 34, 0.08);
+	color: #000000;
+	border-color: rgba(7, 20, 34, 0.08);
 }
 
 /* If the sidebar is explicitly in night mode, ensure the panel is very dark */
 .sidebar.night .nav-expand-panel {
-  background: linear-gradient(180deg, #114161 0%, #07141a 55%, #0a1518 100%);
-  box-shadow: 14px 0 40px rgba(0, 0, 0, 0.7);
-  border-left: 1px solid rgba(0, 0, 0, 0.2);
-  z-index: 1600; /* extra priority for night mode overlays */
+	background: linear-gradient(180deg, #114161 0%, #07141a 55%, #0a1518 100%);
+	box-shadow: 14px 0 40px rgba(0, 0, 0, 0.7);
+	border-left: 1px solid rgba(0, 0, 0, 0.2);
+	z-index: 1600; /* extra priority for night mode overlays */
 }
 
 /* Main content sits to the right of the sidebar */
 .main-content {
-  margin-left: 96px;
-  padding: 24px;
-  min-height: 100vh;
-  box-sizing: border-box;
+	margin-left: 96px;
+	padding: 24px;
+	min-height: 100vh;
+	box-sizing: border-box;
 }
 
 /* Responsive: collapse sidebar to top for small screens */
 @media (max-width: 720px) {
-  .sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 64px;
-    width: 100%;
-    flex-direction: row;
-    align-items: center;
-    padding: 8px 12px;
-    gap: 8px;
-  }
+	.sidebar {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 64px;
+		width: 100%;
+		flex-direction: row;
+		align-items: center;
+		padding: 8px 12px;
+		gap: 8px;
+	}
 
-  /* When the sidebar collapses to the top (mobile), make its gradient run left->right */
-  .sidebar {
-    background: linear-gradient(90deg, #031023 0%, var(--surface) 100%);
-  }
-  .theme-light .sidebar {
-    background: linear-gradient(
-      90deg,
-      var(--accent) 0%,
-      var(--accent-strong) 100%
-    );
-  }
-  .sidebar-top {
-    flex-direction: row;
-    gap: 8px;
-    align-items: center;
-  }
-  .sidebar-bottom {
-    margin-top: 0;
-    margin-left: auto;
-    /* lay out bottom buttons horizontally on small screens */
-    flex-direction: row;
-    align-items: center;
-    gap: 8px;
-  }
-  /* ensure compact icon buttons behave inline */
-  .sidebar-bottom .btn,
-  .sidebar-bottom .icon-btn,
-  .sidebar-bottom .nav-expand-btn,
-  .sidebar-bottom .theme-btn,
-  .sidebar-bottom .logout-btn {
-    width: auto;
-    height: 48px;
-    padding: 6px;
-    border-radius: 10px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .main-content {
-    margin-left: 0;
-    margin-top: 64px;
-    padding: 16px;
-  }
+	/* When the sidebar collapses to the top (mobile), make its gradient run left->right */
+	.sidebar {
+		background: linear-gradient(90deg, #031023 0%, var(--surface) 100%);
+	}
+	.theme-light .sidebar {
+		background: linear-gradient(
+			90deg,
+			var(--accent) 0%,
+			var(--accent-strong) 100%
+		);
+	}
+	.sidebar-top {
+		flex-direction: row;
+		gap: 8px;
+		align-items: center;
+	}
+	.sidebar-bottom {
+		margin-top: 0;
+		margin-left: auto;
+		/* lay out bottom buttons horizontally on small screens */
+		flex-direction: row;
+		align-items: center;
+		gap: 8px;
+	}
+	/* ensure compact icon buttons behave inline */
+	.sidebar-bottom .btn,
+	.sidebar-bottom .icon-btn,
+	.sidebar-bottom .nav-expand-btn,
+	.sidebar-bottom .theme-btn,
+	.sidebar-bottom .logout-btn {
+		width: auto;
+		height: 48px;
+		padding: 6px;
+		border-radius: 10px;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.main-content {
+		margin-left: 0;
+		margin-top: 64px;
+		padding: 16px;
+	}
 }
 
 /* Page title above tasks */
 .page-header {
-  margin-bottom: 12px;
+	margin-bottom: 12px;
 }
 .page-title {
-  margin: 0 0 8px 0;
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: var(--text);
-  display: flex;
-  align-items: center;
-  gap: 8px;
+	margin: 0 0 8px 0;
+	font-size: 1.6rem;
+	font-weight: 700;
+	color: var(--text);
+	display: flex;
+	align-items: center;
+	gap: 8px;
 }
 
 /* Floating circular add button */
 .floating-add {
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-  top: auto;
-  width: 56px;
-  height: 56px;
-  aspect-ratio: 1 / 1;
-  padding: 0;
-  border-radius: 50%;
-  /* primary blue look by default */
-  background: linear-gradient(90deg, var(--accent), var(--accent-strong));
-  color: #04233a;
-  font-size: 1.8rem;
-  line-height: 1;
-  border: none;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 10px 30px rgba(2, 20, 46, 0.28);
-  cursor: pointer;
-  z-index: 1200;
-  transition:
-    transform 0.12s ease,
-    box-shadow 0.12s ease,
-    filter 0.12s ease,
-    background 0.12s ease;
+	position: fixed;
+	right: 20px;
+	bottom: 20px;
+	top: auto;
+	width: 56px;
+	height: 56px;
+	aspect-ratio: 1 / 1;
+	padding: 0;
+	border-radius: 50%;
+	/* primary blue look by default */
+	background: linear-gradient(90deg, var(--accent), var(--accent-strong));
+	color: #04233a;
+	font-size: 1.8rem;
+	line-height: 1;
+	border: none;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 0 10px 30px rgba(2, 20, 46, 0.28);
+	cursor: pointer;
+	z-index: 1200;
+	transition:
+		transform 0.12s ease,
+		box-shadow 0.12s ease,
+		filter 0.12s ease,
+		background 0.12s ease;
 }
 .floating-add:active {
-  transform: scale(0.98);
+	transform: scale(0.98);
 }
 
 .floating-add:hover {
-  /* intensify color like a complete/primary button */
-  background: linear-gradient(
-    90deg,
-    var(--accent-active),
-    var(--accent-strong-active)
-  );
-  color: #04233a;
-  filter: none;
-  box-shadow: 0 18px 44px rgba(2, 20, 46, 0.42);
-  transform: translateY(-4px);
+	/* intensify color like a complete/primary button */
+	background: linear-gradient(
+		90deg,
+		var(--accent-active),
+		var(--accent-strong-active)
+	);
+	color: #04233a;
+	filter: none;
+	box-shadow: 0 18px 44px rgba(2, 20, 46, 0.42);
+	transform: translateY(-4px);
 }
 
 @media (max-width: 720px) {
-  .floating-add {
-    right: 12px;
-    bottom: 12px;
-    top: auto;
-    width: 52px;
-    height: 52px;
-    font-size: 1.6rem;
-  }
+	.floating-add {
+		right: 12px;
+		bottom: 12px;
+		top: auto;
+		width: 52px;
+		height: 52px;
+		font-size: 1.6rem;
+	}
 }
 
 /* Form */
 .auth-card {
-  background: var(--surface);
-  color: var(--text);
-  padding: 18px 28px 28px; /* slightly less top padding so heading sits higher */
-  border-radius: calc(var(--radius) - 4px);
-  box-shadow: var(--elevation);
-  width: 100%;
-  max-width: 420px;
-  border: 1px solid rgba(255, 255, 255, 0.04);
+	background: var(--surface);
+	color: var(--text);
+	padding: 18px 28px 28px; /* slightly less top padding so heading sits higher */
+	border-radius: calc(var(--radius) - 4px);
+	box-shadow: var(--elevation);
+	width: 100%;
+	max-width: 420px;
+	border: 1px solid rgba(255, 255, 255, 0.04);
 }
 
 .auth-card h2 {
-  text-align: center;
-  margin: 0 0 12px;
-  font-size: 1.5rem;
+	text-align: center;
+	margin: 0 0 12px;
+	font-size: 1.5rem;
 }
 
 /* smaller inputs inside card with subtle border and shadow */
 .auth-card .input {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 8px;
-  background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 8px;
-  color: var(--text);
-  box-shadow: 0 6px 18px rgba(2, 20, 46, 0.12);
-  transition:
-    box-shadow 0.12s ease,
-    border-color 0.12s ease,
-    transform 0.12s ease;
-  .page-title-gear {
-    margin-left: 6px;
-    width: 28px;
-    height: 28px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 6px;
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    background: transparent;
-    transition:
-      transform 0.12s ease,
-      background 0.12s ease;
-  }
-  .page-title-gear:hover {
-    transform: translateY(-3px);
-    background: rgba(255, 255, 255, 0.04);
-  }
-  outline: none;
-  transform: translateY(-1px);
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 8px;
+	background: transparent;
+	border: 1px solid rgba(255, 255, 255, 0.06);
+	border-radius: 8px;
+	color: var(--text);
+	box-shadow: 0 6px 18px rgba(2, 20, 46, 0.12);
+	transition:
+		box-shadow 0.12s ease,
+		border-color 0.12s ease,
+		transform 0.12s ease;
+	.page-title-gear {
+		margin-left: 6px;
+		width: 28px;
+		height: 28px;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 6px;
+		border: 1px solid rgba(255, 255, 255, 0.06);
+		background: transparent;
+		transition:
+			transform 0.12s ease,
+			background 0.12s ease;
+	}
+	.page-title-gear:hover {
+		transform: translateY(-3px);
+		background: rgba(255, 255, 255, 0.04);
+	}
+	outline: none;
+	transform: translateY(-1px);
 }
 
 .task-form .input {
-  background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  padding: 8px 10px;
-  border-radius: 8px;
-  font-size: 1rem;
-  color: var(--text);
-  outline: none;
+	background: transparent;
+	border: 1px solid rgba(255, 255, 255, 0.05);
+	padding: 8px 10px;
+	border-radius: 8px;
+	font-size: 1rem;
+	color: var(--text);
+	outline: none;
 }
 .task-form .input::placeholder {
-  color: var(--muted-text);
+	color: var(--muted-text);
 }
 .task-form .input:focus {
-  border-color: rgba(96, 165, 250, 0.9);
-  box-shadow: 0 0 0 4px rgba(96, 165, 250, 0.06);
+	border-color: rgba(96, 165, 250, 0.9);
+	box-shadow: 0 0 0 4px rgba(96, 165, 250, 0.06);
 }
 
 /* Buttons */
 .btn {
-  background: transparent;
-  color: var(--text);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  padding: 8px 12px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition:
-    transform 0.12s ease,
-    box-shadow 0.12s ease,
-    background 0.12s ease;
+	background: transparent;
+	color: var(--text);
+	border: 1px solid rgba(255, 255, 255, 0.06);
+	padding: 8px 12px;
+	border-radius: 8px;
+	cursor: pointer;
+	transition:
+		transform 0.12s ease,
+		box-shadow 0.12s ease,
+		background 0.12s ease;
 }
 .btn:active {
-  transform: translateY(1px);
+	transform: translateY(1px);
 }
 
 /* Top-level buttons in the .app column should not stretch full width */
 .app > .btn,
 .app > .btn-primary {
-  align-self: flex-start;
-  width: auto;
+	align-self: flex-start;
+	width: auto;
 }
 
 .btn-primary:focus,
 .btn-primary:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+	outline: 4px auto -webkit-focus-ring-color;
 }
 .btn-primary {
-  background: linear-gradient(
-    90deg,
-    var(--accent) 0%,
-    var(--accent-strong) 100%
-  );
-  color: #04233a;
-  border: none;
-  box-shadow: 0 8px 18px rgba(96, 165, 250, 0.12);
+	background: linear-gradient(
+		90deg,
+		var(--accent) 0%,
+		var(--accent-strong) 100%
+	);
+	color: #04233a;
+	border: none;
+	box-shadow: 0 8px 18px rgba(96, 165, 250, 0.12);
 }
 .btn-primary:hover {
-  background: linear-gradient(
-    90deg,
-    var(--accent-active) 0%,
-    var(--accent-strong-active) 100%
-  );
-  color: #063254;
-  box-shadow: 0 2px 4px rgba(2, 20, 46, 0.16);
+	background: linear-gradient(
+		90deg,
+		var(--accent-active) 0%,
+		var(--accent-strong-active) 100%
+	);
+	color: #063254;
+	box-shadow: 0 2px 4px rgba(2, 20, 46, 0.16);
 }
 .btn-ghost {
-  background: transparent;
-  color: var(--accent-strong);
-  border: 1px solid rgba(124, 219, 255, 0.08);
+	background: transparent;
+	color: var(--accent-strong);
+	border: 1px solid rgba(124, 219, 255, 0.08);
 }
 
 /* Global hover lift for all buttons (applies to popups and normal UI) */
 .btn:hover {
-  transform: translateY(-3px);
-  /* keep existing transition on .btn for smooth motion; add subtle shadow */
-  box-shadow: 0 10px 24px rgba(2, 20, 46, 0.06);
+	transform: translateY(-3px);
+	/* keep existing transition on .btn for smooth motion; add subtle shadow */
+	box-shadow: 0 10px 24px rgba(2, 20, 46, 0.06);
 }
 
 /* Make cancel ghost buttons on task cards show blue border on hover */
 .task-card .form-actions .btn.btn-ghost:hover {
-  border-color: var(--accent);
+	border-color: var(--accent);
 }
 
 /* Icon button helper (used in the sidebar for compact icon-only buttons) */
 .icon-btn {
-  font-size: 1.25rem;
-  padding: 8px;
-  border-radius: 8px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
+	font-size: 1.25rem;
+	padding: 8px;
+	border-radius: 8px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 40px;
 }
 .icon-btn:focus-visible {
-  outline: 3px solid rgba(96, 165, 250, 0.18);
-  outline-offset: 2px;
+	outline: 3px solid rgba(96, 165, 250, 0.18);
+	outline-offset: 2px;
 }
 
 /* make delete icon black */
 .delete-btn {
-  /* default: white for dark theme */
-  color: #ffffff;
+	/* default: white for dark theme */
+	color: #ffffff;
 }
 
 /* in light theme make delete icon black for contrast */
 .theme-light .delete-btn {
-  color: #000000;
+	color: #000000;
 }
 
 /* Tasks container: row of cards (horizontal scroll on small screens) */
 .tasks-container {
-  display: flex;
-  flex-direction: row;
-  gap: var(--gap);
-  align-items: flex-start;
-  flex-wrap: wrap; /* wrap to next row when cards don't fit */
-  justify-content: center; /* center rows */
+	display: flex;
+	flex-direction: row;
+	gap: var(--gap);
+	align-items: flex-start;
+	flex-wrap: wrap; /* wrap to next row when cards don't fit */
+	justify-content: center; /* center rows */
 }
 
 /* New layout: three vertical priority columns */
 .tasks-columns {
-  display: flex;
-  gap: 40px;
-  align-items: flex-start;
-  justify-content: center;
-  width: 100%;
-  box-sizing: border-box;
-  padding: 8px 12px;
+	display: flex;
+	gap: 40px;
+	align-items: flex-start;
+	justify-content: center;
+	width: 100%;
+	box-sizing: border-box;
+	padding: 8px 12px;
 }
 .task-column {
-  flex: 1 1 320px;
-  max-width: 380px;
-  min-width: 260px;
-  /* use a slightly darker surface for columns in dark mode */
-  background: var(--column-surface);
-  border-radius: calc(var(--radius) - 4px);
-  padding: 24px; /* increased padding for more space between card and container */
-  box-shadow: var(--elevation);
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+	flex: 1 1 320px;
+	max-width: 380px;
+	min-width: 260px;
+	/* use a slightly darker surface for columns in dark mode */
+	background: var(--column-surface);
+	border-radius: calc(var(--radius) - 4px);
+	padding: 24px; /* increased padding for more space between card and container */
+	box-shadow: var(--elevation);
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
 }
 
 /* In light theme the columns should remain bright — override darker column surface */
 .theme-light .task-column {
-  background: var(--surface);
+	background: var(--surface);
 }
 .column-title {
-  margin: 0;
-  font-size: 1.05rem;
-  font-weight: 700;
-  padding: 4px 8px;
+	margin: 0;
+	font-size: 1.05rem;
+	font-weight: 700;
+	padding: 4px 8px;
 }
 .column-body {
-  display: flex;
-  flex-direction: column;
-  gap: 24px; /* larger gap between cards */
+	display: flex;
+	flex-direction: column;
+	gap: 24px; /* larger gap between cards */
 }
 .empty-column {
-  color: var(--muted-text);
-  font-size: 0.95rem;
-  padding: 8px 6px;
+	color: var(--muted-text);
+	font-size: 0.95rem;
+	padding: 8px 6px;
 }
 
 /* Slight color accents per column */
 .column-high {
-  border-top: 4px solid rgba(229, 57, 53, 0.12);
+	border-top: 4px solid rgba(229, 57, 53, 0.12);
 }
 .column-medium {
-  border-top: 4px solid rgba(251, 192, 45, 0.12);
+	border-top: 4px solid rgba(251, 192, 45, 0.12);
 }
 .column-low {
-  border-top: 4px solid rgba(67, 160, 71, 0.12);
+	border-top: 4px solid rgba(67, 160, 71, 0.12);
 }
 
 /* Lift priority columns slightly on hover for tactile feedback */
 .column-high,
 .column-medium,
 .column-low {
-  transition:
-    transform 0.14s ease,
-    box-shadow 0.14s ease;
+	transition:
+		transform 0.14s ease,
+		box-shadow 0.14s ease;
 }
 .column-high:hover,
 .column-medium:hover,
 .column-low:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 50px rgba(2, 20, 46, 0.22);
+	transform: translateY(-6px);
+	box-shadow: 0 20px 50px rgba(2, 20, 46, 0.22);
 }
 
 @media (max-width: 900px) {
-  .tasks-columns {
-    gap: 12px;
-    padding: 8px;
-  }
-  .task-column {
-    min-width: 220px;
-    max-width: 320px;
-  }
+	.tasks-columns {
+		gap: 12px;
+		padding: 8px;
+	}
+	.task-column {
+		min-width: 220px;
+		max-width: 320px;
+	}
 }
 
 @media (max-width: 720px) {
-  .tasks-columns {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-  .task-column {
-    max-width: 100%;
-    min-width: 0;
-  }
+	.tasks-columns {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 12px;
+	}
+	.task-column {
+		max-width: 100%;
+		min-width: 0;
+	}
 }
 
 /* Card styling (always visible) */
 .task-card {
-  /* In dark mode use the same subtle vertical gradient as the sidebar for cohesion */
-  background: linear-gradient(180deg, #031023 0%, var(--surface) 100%);
-  border-radius: var(--radius);
-  padding: 14px;
-  box-shadow: var(--elevation);
-  position: relative;
-  z-index: 1;
-  border: 1px solid rgba(255, 255, 255, 0.03);
-  transition:
-    transform 0.12s ease,
-    box-shadow 0.12s ease;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  box-sizing: border-box;
-  /* slightly smaller cards for denser layout */
-  flex: 0 0 200px;
-  min-width: 220px;
-  min-height: 260px;
-  max-height: 90vh;
-  overflow: auto;
+	/* In dark mode use the same subtle vertical gradient as the sidebar for cohesion */
+	background: linear-gradient(180deg, #031023 0%, var(--surface) 100%);
+	border-radius: var(--radius);
+	padding: 14px;
+	box-shadow: var(--elevation);
+	position: relative;
+	z-index: 1;
+	border: 1px solid rgba(255, 255, 255, 0.03);
+	transition:
+		transform 0.12s ease,
+		box-shadow 0.12s ease;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	box-sizing: border-box;
+	/* slightly smaller cards for denser layout */
+	flex: 0 0 200px;
+	min-width: 220px;
+	min-height: 260px;
+	max-height: 90vh;
+	overflow: auto;
 }
 
 /* Keep task cards using the normal surface color in light mode for contrast */
 .theme-light .task-card {
-  background: var(--surface);
+	background: var(--surface);
 }
 
 .task-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 16px 36px rgba(2, 20, 46, 0.32);
+	transform: translateY(-4px);
+	box-shadow: 0 16px 36px rgba(2, 20, 46, 0.32);
 }
 
 /* Per-column colored glow in dark mode; keep bright mode unchanged */
 :not(.theme-light) .task-card {
-  /* base dark shadow for all cards in dark mode */
-  box-shadow: 0 12px 36px rgba(2, 20, 46, 0.32);
+	/* base dark shadow for all cards in dark mode */
+	box-shadow: 0 12px 36px rgba(2, 20, 46, 0.32);
 }
 
 /* High priority (red) glow */
 :not(.theme-light) .column-high .task-card {
-  box-shadow:
-    0 12px 36px rgba(2, 20, 46, 0.32),
-    0 0 28px rgba(229, 57, 53, 0.12);
+	box-shadow:
+		0 12px 36px rgba(2, 20, 46, 0.32),
+		0 0 28px rgba(229, 57, 53, 0.12);
 }
 :not(.theme-light) .column-high .task-card:hover {
-  transform: translateY(-4px);
-  box-shadow:
-    0 20px 48px rgba(2, 20, 46, 0.44),
-    0 0 36px rgba(229, 57, 53, 0.16);
+	transform: translateY(-4px);
+	box-shadow:
+		0 20px 48px rgba(2, 20, 46, 0.44),
+		0 0 36px rgba(229, 57, 53, 0.16);
 }
 
 /* Medium priority (yellow) glow */
 :not(.theme-light) .column-medium .task-card {
-  box-shadow:
-    0 12px 36px rgba(2, 20, 46, 0.32),
-    0 0 28px rgba(251, 192, 45, 0.12);
+	box-shadow:
+		0 12px 36px rgba(2, 20, 46, 0.32),
+		0 0 28px rgba(251, 192, 45, 0.12);
 }
 :not(.theme-light) .column-medium .task-card:hover {
-  transform: translateY(-4px);
-  box-shadow:
-    0 20px 48px rgba(2, 20, 46, 0.44),
-    0 0 36px rgba(251, 192, 45, 0.16);
+	transform: translateY(-4px);
+	box-shadow:
+		0 20px 48px rgba(2, 20, 46, 0.44),
+		0 0 36px rgba(251, 192, 45, 0.16);
 }
 
 /* Low priority (green) glow */
 :not(.theme-light) .column-low .task-card {
-  box-shadow:
-    0 12px 36px rgba(2, 20, 46, 0.32),
-    0 0 28px rgba(67, 160, 71, 0.12);
+	box-shadow:
+		0 12px 36px rgba(2, 20, 46, 0.32),
+		0 0 28px rgba(67, 160, 71, 0.12);
 }
 :not(.theme-light) .column-low .task-card:hover {
-  transform: translateY(-4px);
-  box-shadow:
-    0 20px 48px rgba(2, 20, 46, 0.44),
-    0 0 36px rgba(67, 160, 71, 0.16);
+	transform: translateY(-4px);
+	box-shadow:
+		0 20px 48px rgba(2, 20, 46, 0.44),
+		0 0 36px rgba(67, 160, 71, 0.16);
 }
 
 .theme-light .task-card {
-  box-shadow: var(--elevation);
+	box-shadow: var(--elevation);
 }
 .theme-light .task-card:hover {
-  box-shadow: 0 16px 36px rgba(2, 20, 46, 0.32);
+	box-shadow: 0 16px 36px rgba(2, 20, 46, 0.32);
 }
 
 /* Only make the edit form vertical (inputs) but keep action buttons inline */
 .task-card .task-form {
-  background: transparent;
-  box-shadow: none;
-  border: none;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  align-items: flex-start;
-  text-align: left;
-  max-height: 100%;
-  overflow: auto;
+	background: transparent;
+	box-shadow: none;
+	border: none;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	align-items: flex-start;
+	text-align: left;
+	max-height: 100%;
+	overflow: auto;
 }
 .task-card .task-form .form-actions {
-  display: flex;
-  gap: 8px;
-  align-items: center;
+	display: flex;
+	gap: 8px;
+	align-items: center;
 }
 
 /* Card content */
 .task-title {
-  font-weight: 600;
-  color: var(--text);
-  font-size: 1.2rem;
-  margin: 0;
+	font-weight: 600;
+	color: var(--text);
+	font-size: 1.2rem;
+	margin: 0;
 }
 .task-description {
-  color: var(--muted-text);
-  font-size: 1rem;
-  margin: 0;
-  white-space: pre-wrap;
-  overflow-wrap: anywhere;
-  word-break: break-word;
-  max-height: 120px;
-  overflow-y: auto;
-  padding-right: 4px;
+	color: var(--muted-text);
+	font-size: 1rem;
+	margin: 0;
+	white-space: pre-wrap;
+	overflow-wrap: anywhere;
+	word-break: break-word;
+	max-height: 120px;
+	overflow-y: auto;
+	padding-right: 4px;
 }
 
 /* Completed */
 .task-completed {
-  opacity: 0.6;
-  text-decoration: line-through;
+	opacity: 0.6;
+	text-decoration: line-through;
 }
 
 /* Controls row at bottom */
 .task-controls {
-  margin-top: auto;
-  display: flex;
-  gap: 8px;
-  align-items: center;
+	margin-top: auto;
+	display: flex;
+	gap: 8px;
+	align-items: center;
 }
 
 /* Small & responsive tweaks */
 @media (max-width: 480px) {
-  .task-form {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  .task-controls {
-    flex-wrap: wrap;
-  }
+	.task-form {
+		flex-direction: column;
+		align-items: stretch;
+	}
+	.task-controls {
+		flex-wrap: wrap;
+	}
 
-  /* ensure card form action buttons wrap or stack on very small screens */
-  .task-card .task-form .form-actions {
-    flex-wrap: wrap;
-    gap: 6px;
-  }
+	/* ensure card form action buttons wrap or stack on very small screens */
+	.task-card .task-form .form-actions {
+		flex-wrap: wrap;
+		gap: 6px;
+	}
 
-  /* on small screens show a single column (stacked) instead of horizontal row */
-  .tasks-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 12px;
-    overflow-x: visible;
-  }
+	/* on small screens show a single column (stacked) instead of horizontal row */
+	.tasks-container {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 12px;
+		overflow-x: visible;
+	}
 
-  /* on medium screens allow cards to stretch a bit to fill space */
-  .task-card {
-    max-width: 100%;
-    min-width: 0;
-  }
+	/* on medium screens allow cards to stretch a bit to fill space */
+	.task-card {
+		max-width: 100%;
+		min-width: 0;
+	}
 }
 
 /* Overlay and narrow panel for New Task form */
 .overlay-form {
-  position: fixed;
-  inset: 0;
-  background: rgba(2, 6, 23, 0.45);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 2300; /* above nav-expand-panel (1400/1600) */
-  padding: 20px;
+	position: fixed;
+	inset: 0;
+	background: rgba(2, 6, 23, 0.45);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 2300; /* above nav-expand-panel (1400/1600) */
+	padding: 20px;
 }
 
 .overlay-panel {
-  background: var(--surface);
-  border-radius: 18px; /* more rounded panel */
-  width: min(520px, 96%);
-  max-height: calc(100vh - 48px);
-  overflow: auto;
-  box-shadow: 0 24px 64px rgba(2, 20, 46, 0.56);
-  border: 1px solid rgba(255, 255, 255, 0.04);
-  padding: 20px;
-  z-index: 2301; /* sit above overlay backdrop */
-  box-sizing: border-box;
-  position: relative;
+	background: var(--surface);
+	border-radius: 18px; /* more rounded panel */
+	width: min(520px, 96%);
+	max-height: calc(100vh - 48px);
+	overflow: auto;
+	box-shadow: 0 24px 64px rgba(2, 20, 46, 0.56);
+	border: 1px solid rgba(255, 255, 255, 0.04);
+	padding: 20px;
+	z-index: 2301; /* sit above overlay backdrop */
+	box-sizing: border-box;
+	position: relative;
 }
 
 /* make the task-form inside the panel vertical and full width */
 .overlay-panel .task-form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  align-items: stretch;
-  padding: 0;
-  background: transparent;
-  box-shadow: none;
-  border: none;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	align-items: stretch;
+	padding: 0;
+	background: transparent;
+	box-shadow: none;
+	border: none;
 }
 
 /* Modal title inside overlay-panel */
 .overlay-panel .modal-title {
-  margin: 0 0 12px 0;
-  font-size: 1.4rem; /* slightly larger */
-  font-weight: 700;
+	margin: 0 0 12px 0;
+	font-size: 1.4rem; /* slightly larger */
+	font-weight: 700;
 }
 
 .overlay-panel .task-form label {
-  font-size: 1rem;
-  font-weight: 600;
+	font-size: 1rem;
+	font-weight: 600;
 }
 
 .overlay-panel .task-form .input {
-  width: 100%;
-  padding: 10px 12px;
-  font-size: 1rem;
+	width: 100%;
+	padding: 10px 12px;
+	font-size: 1rem;
 }
 
 /* make overlay inputs show a neutral grey border */
 .overlay-panel .task-form .input {
-  border: 1px solid rgba(128, 128, 128, 0.22);
-  background: transparent;
+	border: 1px solid rgba(128, 128, 128, 0.22);
+	background: transparent;
 }
 
 .theme-light .overlay-panel .task-form .input {
-  border: 1px solid rgba(34, 34, 34, 0.08);
+	border: 1px solid rgba(34, 34, 34, 0.08);
 }
 
 /* priority-row removed — priority now uses stacked label like other fields */
 
 /* small button style used in App.jsx */
 .btn-sm {
-  padding: 6px 10px;
-  font-size: 0.95rem;
+	padding: 6px 10px;
+	font-size: 0.95rem;
 }
 
 /* make sure inputs size includes padding/border and never exceed panel */
 .overlay-panel .task-form .input,
 .overlay-panel .task-form textarea {
-  box-sizing: border-box;
-  max-width: 100%;
+	box-sizing: border-box;
+	max-width: 100%;
 }
 
 /* keep action buttons on one line and aligned to right inside panel */
 .overlay-panel .form-actions {
-  display: flex;
-  gap: 8px;
-  justify-content: flex-end;
-  align-items: center;
-  margin-top: 10px;
+	display: flex;
+	gap: 8px;
+	justify-content: flex-end;
+	align-items: center;
+	margin-top: 10px;
 }
 
 .overlay-panel .form-actions .btn {
-  padding: 10px 14px;
-  font-size: 1rem;
+	padding: 10px 14px;
+	font-size: 1rem;
 }
 
 /* Make the Cancel (ghost) button in the Add Task overlay use white text for contrast */
 .overlay-panel .form-actions .btn.btn-ghost {
-  color: #ffffff;
-  border-color: rgba(255, 255, 255, 0.06);
-  background: transparent;
+	color: #ffffff;
+	border-color: rgba(255, 255, 255, 0.06);
+	background: transparent;
 }
 .theme-light .overlay-panel .form-actions .btn.btn-ghost {
-  color: #000000;
-  border-color: rgba(7, 20, 34, 0.08);
-  background: transparent;
+	color: #000000;
+	border-color: rgba(7, 20, 34, 0.08);
+	background: transparent;
 }
 
 /* In light theme, when hovering Cancel (ghost) inside Add Task overlay make text black */
 .theme-light .overlay-panel .form-actions .btn.btn-ghost:hover {
-  color: #000000;
-  background: rgba(7, 20, 34, 0.04);
-  border-color: #646cff;
+	color: #000000;
+	background: rgba(7, 20, 34, 0.04);
+	border-color: #646cff;
 }
 
 /* Make the Cancel (ghost) button in the Add Task overlay show blue highlight in dark mode */
 :not(.theme-light) .overlay-panel .form-actions .btn.btn-ghost:hover {
-  border-color: #646cff;
-  background: rgba(100, 108, 255, 0.04);
-  color: #ffffff; /* keep readable */
+	border-color: #646cff;
+	background: rgba(100, 108, 255, 0.04);
+	color: #ffffff; /* keep readable */
 }
 :not(.theme-light) .overlay-panel .form-actions .btn.btn-ghost:focus-visible {
-  outline: 3px solid rgba(96, 165, 250, 0.18);
-  outline-offset: 2px;
+	outline: 3px solid rgba(96, 165, 250, 0.18);
+	outline-offset: 2px;
 }
 .theme-light .overlay-panel .form-actions .btn.btn-ghost {
-  /* in light theme use black text for the ghost Cancel button */
-  color: #000000;
-  border-color: rgba(7, 20, 34, 0.08);
+	/* in light theme use black text for the ghost Cancel button */
+	color: #000000;
+	border-color: rgba(7, 20, 34, 0.08);
 }
 
 /* Auth / Login card centered on screen */
 .auth-page {
-  min-height: calc(100vh - 40px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
-  width: 100%;
-  box-sizing: border-box;
+	min-height: calc(100vh - 40px);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 24px;
+	width: 100%;
+	box-sizing: border-box;
 }
 
 /* Final, highest-specificity enforcement for Add Task Cancel button hover/focus
@@ -2110,116 +2110,236 @@ body::before {
    class and is placed at the file end to avoid being overridden. */
 html.theme-light .overlay-panel .form-actions .btn.btn-ghost:hover,
 html.theme-light .overlay-panel .form-actions .btn.btn-ghost:focus-visible {
-  color: #000000;
-  border-color: #646cff;
-  background: rgba(7, 20, 34, 0.04);
+	color: #000000;
+	border-color: #646cff;
+	background: rgba(7, 20, 34, 0.04);
 }
 
 html:not(.theme-light) .overlay-panel .form-actions .btn.btn-ghost:hover,
 html:not(.theme-light)
-  .overlay-panel
-  .form-actions
-  .btn.btn-ghost:focus-visible {
-  border-color: #646cff;
-  background: rgba(100, 108, 255, 0.04);
-  color: #ffffff;
+	.overlay-panel
+	.form-actions
+	.btn.btn-ghost:focus-visible {
+	border-color: #646cff;
+	background: rgba(100, 108, 255, 0.04);
+	color: #ffffff;
 }
 
 .auth-card {
-  background: var(--surface);
-  color: var(--text);
-  padding: 24px 20px 28px;
-  border-radius: calc(var(--radius) - 4px);
-  box-shadow: var(--elevation);
-  width: 100%;
-  max-width: 420px;
-  border: 1px solid rgba(255, 255, 255, 0.04);
-  box-sizing: border-box;
+	background: var(--surface);
+	color: var(--text);
+	padding: 24px 20px 28px;
+	border-radius: calc(var(--radius) - 4px);
+	box-shadow: var(--elevation);
+	width: 100%;
+	max-width: 420px;
+	border: 1px solid rgba(255, 255, 255, 0.04);
+	box-sizing: border-box;
 }
 
 /* smaller inputs inside card */
 .auth-card form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2px; /* reduced gap between inputs */
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 2px; /* reduced gap between inputs */
 }
 
 .auth-card .input {
-  width: 100%;
-  max-width: 360px; /* ensure inputs never exceed the card */
-  padding: 10px;
-  margin: 0;
-  background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 8px;
-  color: var(--text);
-  box-sizing: border-box;
+	width: 100%;
+	max-width: 360px; /* ensure inputs never exceed the card */
+	padding: 10px;
+	margin: 0;
+	background: transparent;
+	border: 1px solid rgba(255, 255, 255, 0.06);
+	border-radius: 8px;
+	color: var(--text);
+	box-sizing: border-box;
 }
 
 .auth-card .form-actions {
-  display: flex;
-  gap: 8px;
-  justify-content: center;
-  width: 100%;
+	display: flex;
+	gap: 8px;
+	justify-content: center;
+	width: 100%;
 }
 
 .auth-card .form-actions .btn {
-  min-width: 110px;
+	min-width: 110px;
 }
 
 .theme-toggle {
-  position: fixed;
-  top: 12px;
-  right: 12px;
-  z-index: 9999;
-  background: transparent;
-  color: var(--text);
-  width: 40px;
-  height: 40px;
-  border-radius: 8px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  box-shadow: none;
-  cursor: pointer;
-  transition:
-    background 0.12s ease,
-    border-color 0.12s ease,
-    transform 0.12s ease;
+	position: fixed;
+	top: 12px;
+	right: 12px;
+	z-index: 9999;
+	background: transparent;
+	color: var(--text);
+	width: 40px;
+	height: 40px;
+	border-radius: 8px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid rgba(255, 255, 255, 0.06);
+	box-shadow: none;
+	cursor: pointer;
+	transition:
+		background 0.12s ease,
+		border-color 0.12s ease,
+		transform 0.12s ease;
+}
+
+/* Modern landing + login layout */
+.landing-auth-page {
+	min-height: 100vh;
+	padding: 28px 20px;
+}
+
+.landing-shell {
+	width: min(1080px, 100%);
+	display: grid;
+	grid-template-columns: 1.2fr 0.9fr;
+	gap: 24px;
+	align-items: stretch;
+}
+
+.landing-info {
+	background: var(--surface);
+	border: 1px solid rgba(255, 255, 255, 0.06);
+	border-radius: var(--radius);
+	box-shadow: var(--elevation);
+	padding: 28px;
+	display: flex;
+	flex-direction: column;
+	gap: 14px;
+}
+
+.landing-badge {
+	display: inline-flex;
+	align-items: center;
+	width: fit-content;
+	padding: 6px 10px;
+	border-radius: 999px;
+	font-size: 0.82rem;
+	font-weight: 700;
+	letter-spacing: 0.02em;
+	color: #04233a;
+	background: linear-gradient(
+		90deg,
+		var(--accent) 0%,
+		var(--accent-strong) 100%
+	);
+}
+
+.landing-info h1 {
+	margin: 0;
+	font-size: clamp(1.75rem, 3.4vw, 2.35rem);
+	line-height: 1.2;
+}
+
+.landing-info p {
+	margin: 0;
+	color: var(--muted-text);
+	line-height: 1.55;
+}
+
+.landing-points {
+	margin: 4px 0 10px;
+	padding-left: 18px;
+	display: grid;
+	gap: 8px;
+}
+
+.landing-points li {
+	line-height: 1.45;
+}
+
+.landing-auth-card {
+	max-width: none;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.landing-auth-card form {
+	gap: 10px;
+}
+
+.landing-auth-card .form-actions {
+	margin-top: 8px;
+}
+
+.landing-auth-card h2 {
+	margin: 0;
+	text-align: left;
+}
+
+.landing-auth-card .auth-subtitle {
+	margin: 4px 0 14px;
+	color: var(--muted-text);
+}
+
+.landing-auth-card .auth-error {
+	margin: 0 0 10px;
+	color: var(--danger);
+}
+
+@media (max-width: 900px) {
+	.landing-shell {
+		grid-template-columns: 1fr;
+	}
+}
+
+@media (max-width: 560px) {
+	.landing-auth-page {
+		padding: 18px 12px;
+	}
+
+	.landing-info,
+	.landing-auth-card {
+		padding: 20px;
+	}
+
+	.landing-auth-card .form-actions {
+		flex-direction: column;
+	}
+
+	.landing-auth-card .form-actions .btn {
+		width: 100%;
+	}
 }
 
 /* Responsive fixes: make task cards fill their column and avoid overflow */
 .task-card {
-  width: 100% !important;
-  min-width: 0 !important; /* allow shrinking inside narrow columns */
-  box-sizing: border-box !important;
-  /* remove any fixed flex-basis forcing a larger width */
-  flex: 0 1 auto !important;
+	width: 100% !important;
+	min-width: 0 !important; /* allow shrinking inside narrow columns */
+	box-sizing: border-box !important;
+	/* remove any fixed flex-basis forcing a larger width */
+	flex: 0 1 auto !important;
 }
 
 /* Ensure task text wraps instead of overflowing the card */
 .task-title,
 .task-card-title {
-  white-space: normal !important;
-  overflow-wrap: anywhere !important;
-  word-break: break-word !important;
+	white-space: normal !important;
+	overflow-wrap: anywhere !important;
+	word-break: break-word !important;
 }
 .task-description,
 .task-card-desc {
-  white-space: normal !important;
-  overflow-wrap: anywhere !important;
-  word-break: break-word !important;
+	white-space: normal !important;
+	overflow-wrap: anywhere !important;
+	word-break: break-word !important;
 }
 
 /* Slightly reduce the column minimum so 3 columns fit better on narrow screens */
 .task-column {
-  min-width: 200px;
+	min-width: 200px;
 }
 
 @media (max-width: 900px) {
-  .task-column {
-    min-width: 180px;
-  }
+	.task-column {
+		min-width: 180px;
+	}
 }
