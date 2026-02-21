@@ -13,9 +13,7 @@ RUN mkdir -p /var/cache/nginx/client_temp && \
     chown -R nginx:nginx /var/cache/nginx /usr/share/nginx/html
 
 COPY --from=build-stage /app/dist /usr/share/nginx/html
-COPY nginx.conf /etc/nginx/templates/default.conf.template
-
-ENV API_UPSTREAM=http://backend:3000
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 USER root
 

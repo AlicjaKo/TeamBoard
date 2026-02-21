@@ -51,7 +51,7 @@ authRouter.post("/login", async (req, res) => {
 		return res.status(401).json({ message: " Invalid password :(" });
 
 	const accessToken = jwt.sign({ userId: user.userId }, ACCESS_TOKEN_SECRET, {
-		expiresIn: "15m",
+		expiresIn: "7d",
 	});
 	const refreshToken = jwt.sign({ userId: user.userId }, REFRESH_TOKEN_SECRET, {
 		expiresIn: "30d",
@@ -70,7 +70,7 @@ authRouter.post("/token", (req, res) => {
 	jwt.verify(token, REFRESH_TOKEN_SECRET, (err, user) => {
 		if (err) return res.sendStatus(403);
 		const accessToken = jwt.sign({ userId: user.userId }, ACCESS_TOKEN_SECRET, {
-			expiresIn: "15m",
+			expiresIn: "7d",
 		});
 		res.json({ accessToken });
 	});
