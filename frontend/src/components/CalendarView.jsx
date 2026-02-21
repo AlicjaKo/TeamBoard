@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
-import { fetchTasks } from "../api/tasks";
+import { fetchTasks, removeTask, updateTask } from "../api/tasks";
+import TaskItem from "./TaskItem";
 
 const monthNames = [
 	"January",
@@ -95,6 +96,31 @@ export default function CalendarView({ onAddTaskForDate }) {
 	const onSelectDay = (day) => {
 		if (!day) return;
 		setSelectedDate(new Date(display.year, display.month, day));
+	};
+
+	const handleUpdate = async (id, updates) => {
+		const updated = await updateTask(id, updates);
+		if (updated) {
+			setTasks((prev) =>
+				prev.map((task) => (task.id === updated.id ? updated : task)),
+			);
+		}
+	};
+
+	const handleDelete = async (id) => {
+		const previous = tasks;
+		setTasks((prev) => prev.filter((task) => task.id !== id));
+		try {
+			await removeTask(id);
+		} catch (e) {
+			console.error("Failed to delete task in calendar view, reloading", e);
+			try {
+				const data = await fetchTasks();
+				setTasks(Array.isArray(data) ? data : []);
+			} catch (_err) {
+				setTasks(previous);
+			}
+		}
 	};
 
 	// helper: group tasks by yyyy-mm-dd
@@ -236,24 +262,13 @@ export default function CalendarView({ onAddTaskForDate }) {
 									return (
 										<div className="task-cards">
 											{list.map((t) => (
-												<article key={t.id} className="task-card">
-													<h4 className="task-card-title">{t.title}</h4>
-													<p className="task-card-desc">
-														{t.description || "No description"}
-													</p>
-													<div className="task-meta">
-														<span
-															className={`priority ${t.priority || "medium"}`}
-														>
-															{t.priority}
-														</span>
-														{t.assignedUserName && (
-															<span className="assigned">
-																{t.assignedUserName}
-															</span>
-														)}
-													</div>
-												</article>
+												<TaskItem
+													key={t.id}
+													task={t}
+													onUpdate={handleUpdate}
+													onDelete={handleDelete}
+													isPersonalView
+												/>
 											))}
 										</div>
 									);
