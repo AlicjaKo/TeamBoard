@@ -515,6 +515,11 @@ body::before {
 	border-color: #646cff;
 	background: rgba(100, 108, 255, 0.04);
 }
+.nav-panel-btn.nav-active {
+	border-color: #646cff;
+	background: rgba(100, 108, 255, 0.16);
+	font-weight: 700;
+}
 
 /* Keep the board header strip stable in dark mode when hovered (the
    container also has `nav-panel-btn` so override that hover for this case) */
@@ -976,6 +981,9 @@ body::before {
 .day-box-title {
 	margin: 0 0 8px 0;
 }
+.day-box-add-btn {
+	margin-top: 12px;
+}
 .muted {
 	opacity: 0.8;
 }
@@ -1124,6 +1132,20 @@ body::before {
 	font-size: 1.6rem;
 	font-weight: 800;
 	line-height: 1.1;
+}
+.btn.page-title-add {
+	margin-left: 10px;
+	width: 40px;
+	height: 40px;
+	padding: 0;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 9999px;
+}
+.btn.page-title-add svg {
+	width: 1.3rem;
+	height: 1.3rem;
 }
 .page-title-gear {
 	margin-left: 8px;
@@ -1482,7 +1504,7 @@ body::before {
 	/* primary blue look by default */
 	background: linear-gradient(90deg, var(--accent), var(--accent-strong));
 	color: #04233a;
-	font-size: 1.8rem;
+	font-size: 1.3rem;
 	line-height: 1;
 	border: none;
 	display: inline-flex;
@@ -1496,6 +1518,10 @@ body::before {
 		box-shadow 0.12s ease,
 		filter 0.12s ease,
 		background 0.12s ease;
+}
+.floating-add svg {
+	width: 1.3rem;
+	height: 1.3rem;
 }
 .floating-add:active {
 	transform: scale(0.98);
@@ -1732,6 +1758,32 @@ body::before {
 	font-size: 1.05rem;
 	font-weight: 700;
 	padding: 4px 8px;
+}
+.column-title-row {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 8px;
+}
+.column-title-row .btn {
+	min-width: 36px;
+	height: 32px;
+	padding: 0 8px;
+}
+.column-title-row .column-add-btn {
+	width: 40px;
+	height: 40px;
+	min-width: 40px;
+	padding: 0;
+	border-radius: 9999px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	line-height: 1;
+}
+.column-title-row .column-add-btn svg {
+	width: 1.3rem;
+	height: 1.3rem;
 }
 .column-body {
 	display: flex;
