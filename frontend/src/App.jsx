@@ -184,17 +184,6 @@ function App() {
 							>
 								{teamName}
 							</button>
-							{page === "tasks" && (
-								<button
-									type="button"
-									className="btn btn-primary page-title-add"
-									onClick={() => openAddTaskForm()}
-									aria-label="Add task"
-									title="Add task"
-								>
-									<FiPlus />
-								</button>
-							)}
 							{teamId && (
 								<button
 									type="button"
